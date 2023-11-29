@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#4880BE</color>
+    <color name="light_blue">#D6E8F6</color>
+    <color name="app_bg1">#F5F8FB</color>
+    <color name="highlight_text1">#044A71</color>
+    <color name="text_secondary">#847979</color>
+    <color name="dark_yellow">#CED912</color>
+    <color name="tosca_green">#12B3AB</color>
+    <color name="dark_red">#D93612</color>
+</resources>
