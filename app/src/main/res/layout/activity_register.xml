@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/regis_back_arrow"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="Pendaftaran Akun BansosPlus"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
+
+    <TextView
+        android:id="@+id/tv_login_title_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bersiap bergabung di BansosPlus"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_title" />
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        />-->
+
+    <!--input nama    -->
+    <TextView
+        android:id="@+id/tv_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Nama"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
+
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama"
+        android:hint="Nama Lengkap Anda"
+        android:textSize="14sp"
+        android:inputType="text"
+        />
+
+    <!--input email    -->
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Email"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_nama" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email"
+        android:hint="Email Anda"
+        android:textSize="14sp"
+        android:inputType="text"
+        />
+
+    <!--input kata sandi 1    -->
+    <TextView
+        android:id="@+id/tv_pass1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Kata Sandi"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <EditText
+        android:id="@+id/et_pass1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pass1"
+        android:hint="Kata Sandi Anda"
+        android:textSize="14sp"
+        android:inputType="text"
+        />
+
+    <!--input kata sandi 2    -->
+    <TextView
+        android:id="@+id/tv_pass2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Ulangi Kata Sandi"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass1" />
+
+    <EditText
+        android:id="@+id/et_pass2"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pass2"
+        android:hint="Kata Sandi Anda"
+        android:textSize="14sp"
+        android:inputType="text"
+        />
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/daftar"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_can_login"
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sudah memiliki akun?"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_daftar" />
+
+    <TextView
+        android:id="@+id/tv_login_link"
+        android:paddingStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Masuk"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/tv_can_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_daftar" />
+
+
+    <!--    privacy policy -->
+    <TextView
+        android:id="@+id/tv_policy1"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dengan mendaftar Anda setuju dengan,"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_link" />
+
+    <TextView
+        android:id="@+id/tv_policy2"
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ketentuan dan Kebijakan Privasi"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_policy1" />
+
+
+    <!--guidelines-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vert_guideline_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vert_guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
