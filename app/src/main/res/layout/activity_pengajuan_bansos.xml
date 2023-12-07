@@ -151,7 +151,7 @@
         />
 
     <Button
-        android:id="@+id/btn_daftar"
+        android:id="@+id/btn_ajukan_bantuan"
         android:layout_marginTop="32dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"

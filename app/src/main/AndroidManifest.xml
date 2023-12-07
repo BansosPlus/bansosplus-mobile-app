@@ -13,6 +13,16 @@
         android:theme="@style/Theme.BansosPlus"
         tools:targetApi="31">
         <activity
+            android:name=".navigation.views.home.detailBansos.DetailBansosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigation.BottomNavActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom_nav" />
+        <activity
+            android:name=".ui.bansosStatus.StatusPengajuanActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.pengajuanBansos.PengajuanBansosActivity"
             android:exported="false" />
         <activity
