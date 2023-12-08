@@ -17,12 +17,12 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.apply {
             btnMasuk.setOnClickListener{
-                val intent = Intent(this@WelcomeActivity, BottomNavActivity::class.java)
+                val intent = Intent(this@WelcomeActivity, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
             btnDaftar.setOnClickListener{
-                val intent = Intent(this@WelcomeActivity, LoginActivity::class.java)
+                val intent = Intent(this@WelcomeActivity, BottomNavActivity::class.java)
                 startActivity(intent)
                 finish()
             }
