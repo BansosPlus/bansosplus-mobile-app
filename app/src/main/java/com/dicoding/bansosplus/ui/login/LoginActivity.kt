@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun login(email: String, password: String) {
+    private fun login(email: String, password: String) {
         val request = LoginRequest()
         request.email = email
         request.password = password
