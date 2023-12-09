@@ -14,7 +14,7 @@
         android:id="@+id/tv_home_greet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Halo,"
@@ -33,28 +33,28 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toEndOf="@+id/tv_home_greet"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_lengkap_Data"
-        android:layout_width="379dp"
-        android:layout_height="65dp"
+        android:layout_width="345dp"
+        android:layout_height="56dp"
         android:layout_margin="20dp"
         android:layout_marginTop="56dp"
-        app:cardCornerRadius="16dp"
         app:cardBackgroundColor="@color/light_blue"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top"
-        app:layout_constraintVertical_bias="0.029">
+        app:layout_constraintVertical_bias="0.024">
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="334dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Segera lengkapi data diri Anda!"
@@ -71,7 +71,7 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_lengkap_Data" />
 
@@ -79,7 +79,7 @@
         android:id="@+id/listBansosView"
         android:layout_width="410dp"
         android:layout_height="520dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
