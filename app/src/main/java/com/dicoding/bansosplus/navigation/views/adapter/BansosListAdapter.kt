@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.navigation.data.model.BansosItem
+import java.util.Locale
+import java.text.SimpleDateFormat
 
 class BansosListAdapter(
     private var list: ArrayList<BansosItem>,
@@ -29,7 +31,11 @@ class BansosListAdapter(
         fun bind(data: BansosItem) {
             bansosNameTextView?.text = data.name
             bansosTypeTextView?.text = data.type
-            bansosExpiryDateView?.text = data.expiryDate.toString()
+            data.expiryDate?.let { date ->
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                val formattedDate = dateFormat.format(date)
+                bansosExpiryDateView?.text = formattedDate
+            }
 
         }
     }
