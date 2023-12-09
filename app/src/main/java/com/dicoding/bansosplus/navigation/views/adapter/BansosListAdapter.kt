@@ -19,20 +19,18 @@ class BansosListAdapter(
         private var bansosNameTextView: TextView? = null
         private var bansosTypeTextView: TextView? = null
         private var bansosExpiryDateView: TextView? = null
-        private var bansosImageUrl: TextView? = null
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
             bansosTypeTextView = view.findViewById(R.id.bansosType)
             bansosExpiryDateView = view.findViewById(R.id.expiryDateText)
-            bansosImageUrl = view.findViewById(R.id.bansosImage)
         }
 
-        fun bind(data: BansosItem, context: Context) {
+        fun bind(data: BansosItem) {
             bansosNameTextView?.text = data.name
             bansosTypeTextView?.text = data.type
             bansosExpiryDateView?.text = data.expiryDate.toString()
-            bansosImageUrl?.text = data.imageUrl
+
         }
     }
 
@@ -41,7 +39,7 @@ class BansosListAdapter(
     }
 
     override fun onBindViewHolder(holder: BansosHolder, position: Int) {
-        holder.bind(list[position], context)
+        holder.bind(list[position])
     }
 
     override fun getItemCount(): Int {
