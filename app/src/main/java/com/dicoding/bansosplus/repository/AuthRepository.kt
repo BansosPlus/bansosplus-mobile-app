@@ -1,4 +1,4 @@
-package com.dicoding.bansosplus.repository.auth
+package com.dicoding.bansosplus.repository
 
 import com.dicoding.bansosplus.api.RetrofitInstance
 import com.dicoding.bansosplus.models.auth.LoginRequest

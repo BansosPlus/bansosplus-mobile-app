@@ -20,7 +20,7 @@ object RetrofitInstance {
         retrofit.create(AuthApi::class.java)
     }
 
-    val api: BansosApi by lazy {
+    val bansosApi: BansosApi by lazy {
         retrofit.create(BansosApi::class.java)
     }
 }

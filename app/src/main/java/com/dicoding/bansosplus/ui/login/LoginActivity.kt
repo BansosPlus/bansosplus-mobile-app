@@ -8,7 +8,7 @@ import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.ActivityLoginBinding
 import com.dicoding.bansosplus.models.auth.LoginRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
-import com.dicoding.bansosplus.repository.auth.AuthRepository
+import com.dicoding.bansosplus.repository.AuthRepository
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
