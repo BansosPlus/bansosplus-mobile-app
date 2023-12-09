@@ -12,4 +12,5 @@ class Retro {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
+
 }
