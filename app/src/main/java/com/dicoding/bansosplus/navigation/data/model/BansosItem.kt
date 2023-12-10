@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 import java.util.Date
 
 data class BansosItem(
+    @field:SerializedName("id")
+    val id: Int,
+
     @field:SerializedName("name")
     val name: String,
 
@@ -12,6 +15,9 @@ data class BansosItem(
 
     @field:SerializedName("expiry_date")
     val expiryDate: Date,
+
+    @field:SerializedName("description")
+    val description: String,
 
     @field:SerializedName("image_url")
     val imageUrl: String,

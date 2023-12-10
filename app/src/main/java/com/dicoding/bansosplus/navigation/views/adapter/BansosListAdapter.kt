@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,10 +17,11 @@ import java.text.SimpleDateFormat
 class BansosListAdapter(
     private var list: ArrayList<BansosItem>,
     private val context: Context,
+    private val onItemClickListener: (BansosItem) -> Unit
 ) : RecyclerView.Adapter<BansosListAdapter.BansosHolder>() {
 
 
-    class BansosHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    class BansosHolder(val view: View, private val onItemClickListener: (BansosItem) -> Unit) : RecyclerView.ViewHolder(view) {
         private var bansosNameTextView: TextView? = null
         private var bansosTypeTextView: TextView? = null
         private var bansosExpiryDateView: TextView? = null
@@ -45,12 +47,15 @@ class BansosListAdapter(
                     .load(data.imageUrl)
                     .into(it)
             }
-
+            view.setOnClickListener{
+                onItemClickListener.invoke(data)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BansosHolder {
-        return BansosHolder(LayoutInflater.from(parent.context).inflate(R.layout.bansos_card, parent, false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.bansos_card, parent, false)
+        return BansosHolder(view, onItemClickListener)
     }
 
     override fun onBindViewHolder(holder: BansosHolder, position: Int) {
@@ -66,5 +71,8 @@ class BansosListAdapter(
         bansosList.sortBy { it.name }
         list = bansosList
         notifyDataSetChanged()
+    }
+    fun getSelectedItemId(position: Int): Int {
+        return list[position].id
     }
 }
