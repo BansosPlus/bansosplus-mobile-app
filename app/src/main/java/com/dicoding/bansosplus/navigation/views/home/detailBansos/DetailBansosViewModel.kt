@@ -1,4 +1,4 @@
-package com.dicoding.bansosplus.navigation.views.home
+package com.dicoding.bansosplus.navigation.views.home.detailBansos
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -10,27 +10,28 @@ import com.dicoding.bansosplus.navigation.data.model.BansosItem
 import com.dicoding.bansosplus.repository.BansosRepository
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val sessionManager: SessionManager) : ViewModel() {
+class DetailBansosViewModel(
+    private val sessionManager: SessionManager,
+    ) : ViewModel() {
     private val bansosRepository: BansosRepository = BansosRepository(sessionManager)
-    private val _bansosList = MutableLiveData(ArrayList<BansosItem>())
-    val bansosList: LiveData<ArrayList<BansosItem>>
-        get() = _bansosList
+    private val _bansosItem = MutableLiveData<BansosItem?>()
+    val bansosItem: MutableLiveData<BansosItem?>
+        get() = _bansosItem
 
-    fun getBansos() {
+    fun get(id: String) {
         viewModelScope.launch {
             try {
-                val response = bansosRepository.get()
+                val response = bansosRepository.getDetail(id)
                 if (response.isSuccessful) {
-                    val list = response.body()?.data
-                    _bansosList.value = list as ArrayList<BansosItem>
-                    Log.i("BANSOS", "Get list of bansos successfully")
+                    val item = response.body()?.data
+                    _bansosItem.value = item
+                    Log.i("BANSOS", "Get detail bansos successfully")
                 } else {
                     Log.e("BANSOS", "Response failed")
                 }
             } catch (e: Exception) {
                 Log.e("BANSOS", "Connection failed")
             }
-
         }
     }
 }

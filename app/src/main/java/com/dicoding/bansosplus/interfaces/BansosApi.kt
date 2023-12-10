@@ -1,7 +1,7 @@
 package com.dicoding.bansosplus.interfaces
 
+import com.dicoding.bansosplus.models.auth.BansosDetailResponse
 import com.dicoding.bansosplus.models.auth.BansosResponse
-import com.dicoding.bansosplus.navigation.data.model.BansosItem
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -15,5 +15,5 @@ interface BansosApi {
     suspend fun getDetail(
         @Header("Authorization") token: String,
         @Path("id") id: String
-    ): Response<BansosItem>
+    ): Response<BansosDetailResponse>
 }
