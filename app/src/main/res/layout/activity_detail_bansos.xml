@@ -9,7 +9,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="355dp"
-        android:layout_height="575dp"
+        android:layout_height="599dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
@@ -20,67 +20,79 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/bansosImageView"
                 android:layout_width="match_parent"
                 android:layout_height="305dp"
-                android:src="@drawable/blt"
                 android:layout_marginBottom="20dp"
-                />
-
-            <TextView
-                android:id="@+id/textViewBansosId"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
+                android:src="@drawable/blt" />
 
             <TextView
                 android:id="@+id/textViewBansosTitle"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
+                android:layout_height="40dp"
+                android:text="Paket Sembako Covid-19"
+                android:textSize="20sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout0"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="135dp"
+                    android:layout_height="35dp"
+                    android:text="Batas Pendaftaran:"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6" />
+
+                <TextView
+                    android:id="@+id/textViewBansosExpiryDate"
+                    android:layout_width="137dp"
+                    android:layout_height="35dp"
+                    android:text="TextView"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
-                android:id="@+id/textViewBansosExpiryDate"
+                android:id="@+id/textView1"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
+                android:layout_height="35dp"
+                android:text="Deskripsi Bantuan"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewBansosDescription"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
+                android:layout_height="60dp"
+                android:text="TextView"
+                android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/textViewBansos1"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textViewBansos2"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textViewBansos3"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:text="TextView" />
         </LinearLayout>
-
-
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="409dp"
-        android:layout_height="88dp"
+        android:layout_height="70dp"
         android:background="@color/light_purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,8 +109,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.873"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

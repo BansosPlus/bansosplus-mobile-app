@@ -6,7 +6,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.R
 import java.text.SimpleDateFormat
@@ -44,12 +43,10 @@ class DetailBansosActivity : AppCompatActivity() {
                 if (bansosDetails != null) {
 
                     val bansosImageView: ImageView = findViewById(R.id.bansosImageView)
-                    val bansosIdTextView: TextView = findViewById(R.id.textViewBansosId)
                     val bansosTitleView: TextView = findViewById(R.id.textViewBansosTitle)
                     val bansosExpiryDateView: TextView = findViewById(R.id.textViewBansosExpiryDate)
                     val bansosDescriptionView: TextView = findViewById(R.id.textViewBansosDescription)
 
-                    bansosIdTextView.text = bansosId
                     bansosTitleView.text = bansosDetails.name
                     bansosDetails.expiryDate?.let { value ->
                         val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
