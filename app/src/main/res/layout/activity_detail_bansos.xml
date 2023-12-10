@@ -6,18 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".navigation.views.home.detailBansos.DetailBansosActivity">
 
-    <TextView
-        android:id="@+id/textViewBansosId"
-        android:layout_width="170dp"
-        android:layout_height="260dp"
-        android:text="Test"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="355dp"
+        android:layout_height="575dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="0.036">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="305dp"
+                android:src="@drawable/blt"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/textViewBansosId"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansosTitle"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansosExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansosDescription"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansos1"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansos2"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBansos3"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="TextView" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="409dp"
+        android:layout_height="88dp"
+        android:background="@color/light_purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="141dp"
+            android:layout_height="54dp"
+            android:backgroundTint="@color/blue"
+            android:text="Daftar"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.873"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="411dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="42dp"
+            android:layout_height="37dp"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

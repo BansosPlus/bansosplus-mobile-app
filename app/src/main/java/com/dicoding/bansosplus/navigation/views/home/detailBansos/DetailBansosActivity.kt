@@ -2,6 +2,7 @@ package com.dicoding.bansosplus.navigation.views.home.detailBansos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.dicoding.bansosplus.R
@@ -10,6 +11,11 @@ class DetailBansosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_bansos)
+
+        val backButton: ImageButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
 
         val intent = intent
         if (intent.hasExtra("bansosId")) {
