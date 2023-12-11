@@ -16,4 +16,5 @@ interface BansosApi {
         @Header("Authorization") token: String,
         @Path("id") id: String
     ): Response<BansosDetailResponse>
+
 }

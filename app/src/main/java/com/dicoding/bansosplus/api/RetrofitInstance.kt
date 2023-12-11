@@ -3,6 +3,7 @@ package com.dicoding.bansosplus.api
 import com.dicoding.bansosplus.Constants
 import com.dicoding.bansosplus.interfaces.AuthApi
 import com.dicoding.bansosplus.interfaces.BansosApi
+import com.dicoding.bansosplus.interfaces.BansosRegistrationApi
 import com.dicoding.bansosplus.interfaces.FeedbackApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,5 +26,9 @@ object RetrofitInstance {
 
     val feedbackApi: FeedbackApi by lazy {
         retrofit.create(FeedbackApi::class.java)
+    }
+
+    val bansosRegistrationApi: BansosRegistrationApi by lazy {
+        retrofit.create(BansosRegistrationApi::class.java)
     }
 }
