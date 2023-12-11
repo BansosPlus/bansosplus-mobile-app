@@ -181,7 +181,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/daftarButton"
             android:layout_width="141dp"
             android:layout_height="54dp"
             android:backgroundTint="@color/blue"

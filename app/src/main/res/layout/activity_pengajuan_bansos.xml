@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.pengajuanBansos.PengajuanBansosActivity">
-
-<!--    perlu dibenahi lg, flownya krng masuk-->
-    <!--    arrow ini yg fix-->
-    <ImageView
-        android:id="@+id/detail_blt_back"
+    tools:context=".navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity">
+    
+    <ImageButton
+        android:id="@+id/backButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:paddingTop="8dp"

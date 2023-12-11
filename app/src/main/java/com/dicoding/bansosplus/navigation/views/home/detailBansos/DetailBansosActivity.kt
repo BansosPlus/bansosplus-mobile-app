@@ -1,6 +1,8 @@
 package com.dicoding.bansosplus.navigation.views.home.detailBansos
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +18,7 @@ import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.navigation.data.model.FeedbackItem
 import com.dicoding.bansosplus.navigation.views.adapter.FeedbackListAdapter
+import com.dicoding.bansosplus.navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -86,6 +89,13 @@ class DetailBansosActivity : AppCompatActivity() {
                     finish()
                 }
             })
+
+            val daftarButton: Button = findViewById(R.id.daftarButton)
+            daftarButton.setOnClickListener {
+                val intent = Intent(this, PengajuanBansosActivity::class.java)
+                intent.putExtra("bansosId", bansosId)
+                startActivity(intent)
+            }
         } else {
             Toast.makeText(this, "No bansosId found in the intent", Toast.LENGTH_SHORT).show()
             finish()
