@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeActivity">
 
-    <!--    nanti fetch nama user disini-->
-
     <!--    cardview isi data diri, dissapear kalo udh diisi-->
 
     <TextView
@@ -24,13 +22,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_home_username"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Pak RT !"
         android:textSize="22sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
@@ -69,6 +68,7 @@
         android:layout_marginTop="8dp"
         android:text="List Bansos"
         android:textSize="22sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
@@ -77,8 +77,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
-        android:layout_width="409dp"
-        android:layout_height="498dp"
+        android:layout_width="406dp"
+        android:layout_height="508dp"
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

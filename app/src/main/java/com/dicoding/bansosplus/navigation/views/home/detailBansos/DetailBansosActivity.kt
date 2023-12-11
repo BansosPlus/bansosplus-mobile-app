@@ -16,13 +16,13 @@ import com.dicoding.bansosplus.SessionManager
 
 class DetailBansosActivity : AppCompatActivity() {
 
-    private lateinit var sessionManager: SessionManager
+    private lateinit var activitySessionManager: SessionManager
     private lateinit var viewModel: DetailBansosViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_bansos)
 
-        sessionManager = SessionManager(this)
+        activitySessionManager = SessionManager(this)
 
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
@@ -33,7 +33,7 @@ class DetailBansosActivity : AppCompatActivity() {
 
         if (intent.hasExtra("bansosId")) {
             val bansosId = intent.getStringExtra("bansosId")
-            viewModel = ViewModelProvider(this, DetailBansosViewModelFactory(sessionManager)).get(DetailBansosViewModel::class.java)
+            viewModel = ViewModelProvider(this, DetailBansosViewModelFactory(activitySessionManager)).get(DetailBansosViewModel::class.java)
 
             if (bansosId != null) {
                 viewModel.get(bansosId)

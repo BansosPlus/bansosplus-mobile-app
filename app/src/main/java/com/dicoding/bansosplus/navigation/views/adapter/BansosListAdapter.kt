@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,20 +22,17 @@ class BansosListAdapter(
 
     class BansosHolder(val view: View, private val onItemClickListener: (BansosItem) -> Unit) : RecyclerView.ViewHolder(view) {
         private var bansosNameTextView: TextView? = null
-        private var bansosTypeTextView: TextView? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
-            bansosTypeTextView = view.findViewById(R.id.bansosType)
             bansosExpiryDateView = view.findViewById(R.id.expiryDateText)
             bansosImageUrl = view.findViewById(R.id.bansosImage)
         }
 
         fun bind(data: BansosItem) {
             bansosNameTextView?.text = data.name
-            bansosTypeTextView?.text = data.type
             data.expiryDate?.let { date ->
                 val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 val formattedDate = dateFormat.format(date)

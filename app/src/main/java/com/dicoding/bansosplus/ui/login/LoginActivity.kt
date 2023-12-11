@@ -3,6 +3,7 @@ package com.dicoding.bansosplus.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.ActivityLoginBinding
@@ -43,8 +44,15 @@ class LoginActivity : AppCompatActivity() {
         val response = authRepository.login(request)
         if (response.isSuccessful) {
             val user = response.body()?.data
-            user?.name?.let { sessionManager.saveName(it) }
-            user?.token?.let { sessionManager.saveToken(it) }
+            user?.name?.let {
+                Log.d("SaveName", "Saving Name: $it")
+                sessionManager.saveName(it)
+            }
+
+            user?.token?.let {
+                Log.d("SaveToken", "Saving Token: $it")
+                sessionManager.saveToken(it)
+            }
 
             val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
             startActivity(intent)
