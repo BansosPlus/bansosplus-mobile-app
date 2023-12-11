@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class BansosStatusResponse(
     @field:SerializedName("data")
-    val data: BansosStatusItem? = null,
+    val data: List<BansosStatusItem>? = null,
 )

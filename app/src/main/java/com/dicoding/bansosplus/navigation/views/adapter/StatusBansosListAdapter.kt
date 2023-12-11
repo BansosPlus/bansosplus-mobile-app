@@ -34,10 +34,10 @@ class StatusBansosListAdapter(
         }
 
         fun bind(data: BansosStatusItem) {
-            bansosNameTextView?.text = data.name
-            bansosNameTextView?.text = data.status
+            bansosNameTextView?.text = data.bansosName
+            bansosStatusTextView?.text = data.status
 
-            data.expiryDate?.let { date ->
+            data.createdAt?.let { date ->
                 val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 val formattedDate = dateFormat.format(date)
                 bansosExpiryDateView?.text = formattedDate
