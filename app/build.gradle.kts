@@ -52,6 +52,7 @@ dependencies {
     implementation("androidx.core:core-ktx:+")
     implementation("androidx.core:core-ktx:+")
     implementation("androidx.core:core-ktx:+")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt("com.github.bumptech.glide:ksp:4.14.2")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     testImplementation("junit:junit:4.13.2")

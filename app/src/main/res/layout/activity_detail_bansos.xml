@@ -6,16 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".navigation.views.home.detailBansos.DetailBansosActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="354dp"
-        android:layout_height="670dp"
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="348dp"
+        android:layout_height="602dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.036">
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,8 +32,8 @@
                 android:id="@+id/textViewBansosTitle"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:textColor="@color/black"
                 android:text="Paket Sembako Covid-19"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,8 +49,8 @@
                     android:layout_width="135dp"
                     android:layout_height="35dp"
                     android:text="Jenis Bantuan        :"
-                    android:textSize="15sp"
                     android:textColor="@color/black"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -63,8 +62,8 @@
                     android:layout_width="137dp"
                     android:layout_height="35dp"
                     android:text="Kebutuhan Pokok"
-                    android:textSize="15sp"
                     android:textColor="@color/black"
+                    android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -86,8 +85,8 @@
                     android:layout_width="135dp"
                     android:layout_height="35dp"
                     android:text="Batas Pendaftaran:"
-                    android:textSize="15sp"
                     android:textColor="@color/black"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +136,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listBansosView"
+                android:id="@+id/listFeedbackView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_marginBottom="64dp"
@@ -147,7 +146,7 @@
                 app:layout_constraintVertical_bias="0.085" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

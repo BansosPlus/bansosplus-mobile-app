@@ -64,7 +64,7 @@ class BansosListAdapter(
 
     fun updateBansosList(bansosList: ArrayList<BansosItem>) {
         list.clear()
-        bansosList.sortBy { it.name }
+        bansosList.sortBy { it.id }
         list = bansosList
         notifyDataSetChanged()
     }

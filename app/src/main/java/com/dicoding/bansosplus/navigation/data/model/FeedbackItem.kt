@@ -8,13 +8,13 @@ data class FeedbackItem(
     val id: Int,
 
     @field:SerializedName("user_id")
-    val userId: String,
+    val userId: Int,
 
     @field:SerializedName("bansos_id")
-    val bansosId: String,
+    val bansosId: Int,
 
     @field:SerializedName("score")
-    val score: String,
+    val score: Int,
 
     @field:SerializedName("description")
     val description: String,

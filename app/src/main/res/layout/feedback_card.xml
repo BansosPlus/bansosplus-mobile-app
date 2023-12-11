@@ -49,7 +49,7 @@
                 app:srcCompat="@drawable/star" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/feedbackScore"
                 android:layout_width="18dp"
                 android:layout_height="17dp"
                 android:layout_marginTop="15dp"
