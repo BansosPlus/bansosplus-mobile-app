@@ -7,8 +7,8 @@ class SessionManager (context: Context) {
     private var prefs: SharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 
     companion object {
-        const val NAME = ""
-        const val TOKEN = ""
+        const val NAME = "user_name"
+        const val TOKEN = "user_token"
     }
 
     fun saveName(name: String) {

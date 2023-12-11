@@ -44,14 +44,14 @@ class LoginActivity : AppCompatActivity() {
         val response = authRepository.login(request)
         if (response.isSuccessful) {
             val user = response.body()?.data
-            user?.name?.let {
-                Log.d("SaveName", "Saving Name: $it")
-                sessionManager.saveName(it)
-            }
-
             user?.token?.let {
                 Log.d("SaveToken", "Saving Token: $it")
                 sessionManager.saveToken(it)
+            }
+
+            user?.name?.let {
+                Log.d("SaveName", "Saving Name: $it")
+                sessionManager.saveName(it)
             }
 
             val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
