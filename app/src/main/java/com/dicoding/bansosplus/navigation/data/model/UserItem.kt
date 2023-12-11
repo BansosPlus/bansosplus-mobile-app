@@ -16,7 +16,7 @@ data class UserItem(
     val nik: String,
 
     @field:SerializedName("no_kk")
-    val no_kk: String,
+    val noKk: String,
 
     @field:SerializedName("income")
     val income: String,
