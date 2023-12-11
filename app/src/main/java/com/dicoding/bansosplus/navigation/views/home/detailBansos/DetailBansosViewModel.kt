@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.bansosplus.SessionManager
-import com.dicoding.bansosplus.models.auth.FeedbackRequest
 import com.dicoding.bansosplus.navigation.data.model.BansosItem
 import com.dicoding.bansosplus.navigation.data.model.FeedbackItem
 import com.dicoding.bansosplus.repository.BansosRepository
@@ -45,9 +44,7 @@ class DetailBansosViewModel(
     fun getFeedback(id: Int) {
         viewModelScope.launch {
             try {
-                val request = FeedbackRequest()
-                request.bansosId = id
-                val response = feedbackRepository.getFeedbackByBansos(request)
+                val response = feedbackRepository.getFeedbackByBansos(id.toString())
                 if (response.isSuccessful) {
                     val list = response.body()?.data
                     _feedbackList.value = list as ArrayList<FeedbackItem>

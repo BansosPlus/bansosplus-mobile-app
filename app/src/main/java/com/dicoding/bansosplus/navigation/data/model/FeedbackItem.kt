@@ -10,6 +10,9 @@ data class FeedbackItem(
     @field:SerializedName("user_id")
     val userId: Int,
 
+    @field:SerializedName("user_name")
+    val userName: String,
+
     @field:SerializedName("bansos_id")
     val bansosId: Int,
 

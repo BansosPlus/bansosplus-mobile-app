@@ -6,8 +6,8 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
-        android:layout_height="124dp"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="23dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/light_yellow">
 
@@ -27,14 +27,14 @@
                 android:id="@+id/feedbackUserName"
                 android:layout_width="78dp"
                 android:layout_height="17dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="84dp"
                 android:text="Bang Zull"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.155"
+                app:layout_constraintHorizontal_bias="0.056"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,16 +77,17 @@
                 android:layout_width="203dp"
                 android:layout_height="39dp"
                 android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
                 android:text="Bantuan sosial nya sangat membantu saya"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.34"
+                app:layout_constraintHorizontal_bias="0.238"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.461" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

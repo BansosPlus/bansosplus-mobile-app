@@ -27,8 +27,8 @@ class FeedbackListAdapter(
         }
 
         fun bind(data: FeedbackItem) {
-            feedbackUsernameTextView?.text = data.userId.toString()
-            feedbackScoreTextView?.text = data.score.toString()
+            feedbackUsernameTextView?.text = data.userName
+            feedbackScoreTextView?.text = "${data.score.toString()}/5"
             feedbackDescriptionTextView?.text = data.description
         }
     }
