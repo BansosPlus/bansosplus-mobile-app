@@ -5,8 +5,10 @@ import com.dicoding.bansosplus.interfaces.AuthApi
 import com.dicoding.bansosplus.interfaces.BansosApi
 import com.dicoding.bansosplus.interfaces.BansosRegistrationApi
 import com.dicoding.bansosplus.interfaces.FeedbackApi
+import com.dicoding.bansosplus.interfaces.UserApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 object RetrofitInstance {
     private val retrofit by lazy {
@@ -18,6 +20,10 @@ object RetrofitInstance {
 
     val authApi: AuthApi by lazy {
         retrofit.create(AuthApi::class.java)
+    }
+
+    val userApi: UserApi by lazy {
+        retrofit.create(UserApi::class.java)
     }
 
     val bansosApi: BansosApi by lazy {

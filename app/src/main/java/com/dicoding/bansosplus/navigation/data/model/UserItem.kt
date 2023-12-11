@@ -11,4 +11,13 @@ data class UserItem(
 
     @field:SerializedName("token")
     val token: String,
+
+    @field:SerializedName("nik")
+    val nik: String,
+
+    @field:SerializedName("no_kk")
+    val no_kk: String,
+
+    @field:SerializedName("income")
+    val income: String,
 )
