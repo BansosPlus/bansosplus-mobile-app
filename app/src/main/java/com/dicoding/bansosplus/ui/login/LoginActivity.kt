@@ -10,6 +10,7 @@ import com.dicoding.bansosplus.databinding.ActivityLoginBinding
 import com.dicoding.bansosplus.models.auth.LoginRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.repository.AuthRepository
+import com.dicoding.bansosplus.ui.register.RegisterActivity
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -32,6 +33,12 @@ class LoginActivity : AppCompatActivity() {
                         etPassword.text.toString().trim()
                     )
                 }
+            }
+
+            tvRegisLink.setOnClickListener{
+                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }
@@ -58,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } else {
-            //
+            // TODO: Alert
         }
     }
 }

@@ -97,6 +97,32 @@
         android:inputType="text"
         />
 
+    <!--input nomor handphone    -->
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Phone"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+        android:hint="Nomor Handphone Anda"
+        android:textSize="14sp"
+        android:inputType="text"
+        />
+
     <!--input kata sandi 1    -->
     <TextView
         android:id="@+id/tv_pass1"
@@ -108,7 +134,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
 
     <EditText
         android:id="@+id/et_pass1"

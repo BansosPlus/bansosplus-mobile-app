@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.bansosplus.databinding.ActivityWelcomeBinding
-import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.ui.login.LoginActivity
+import com.dicoding.bansosplus.ui.register.RegisterActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class WelcomeActivity : AppCompatActivity() {
                 finish()
             }
             btnDaftar.setOnClickListener{
-                val intent = Intent(this@WelcomeActivity, BottomNavActivity::class.java)
+                val intent = Intent(this@WelcomeActivity, RegisterActivity::class.java)
                 startActivity(intent)
                 finish()
             }
