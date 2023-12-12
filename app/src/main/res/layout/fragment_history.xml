@@ -16,12 +16,10 @@
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
 
-    <!--    guideline-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
         android:layout_width="403dp"
-        android:layout_height="686dp"
+        android:layout_height="595dp"
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.databinding.FragmentBansosBinding
 import com.dicoding.bansosplus.databinding.FragmentHistoryBinding
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import com.dicoding.bansosplus.navigation.views.adapter.HistoryListAdapter
@@ -27,6 +28,8 @@ class HistoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+
         sessionManager = SessionManager(requireContext())
 
         viewModel = ViewModelProvider(this, HistoryViewModelFactory(sessionManager)).get(HistoryViewModel::class.java)
