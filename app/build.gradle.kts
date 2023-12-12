@@ -65,4 +65,11 @@ dependencies {
 //    retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // scan qr
+    implementation("com.github.yuriy-budiyev:code-scanner:2.3.2")
+    // Camera
+    implementation("androidx.camera:camera-camera2:1.2.1")
+    implementation("androidx.camera:camera-lifecycle:1.2.1")
+    implementation("androidx.camera:camera-view:1.2.1")
 }
