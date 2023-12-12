@@ -19,7 +19,7 @@ class BansosViewModel(private val sessionManager: SessionManager) : ViewModel() 
     fun getBansos() {
         viewModelScope.launch {
             try {
-                val response = bansosRegistrationRepository.getBansosRegistrationByUser()
+                val response = bansosRegistrationRepository.getBansosRegistrationByUser("ON_PROGRESS,ACCEPTED")
                 if (response.isSuccessful) {
                     val list = response.body()?.data
                     _bansosRegistrationList.value = list as ArrayList<BansosStatusItem>

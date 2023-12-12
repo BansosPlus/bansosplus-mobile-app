@@ -20,7 +20,7 @@ class HistoryViewModel(private val sessionManager: SessionManager) : ViewModel()
     fun getBansos() {
         viewModelScope.launch {
             try {
-                val response = bansosRegistrationRepository.getBansosRegistrationByUser()
+                val response = bansosRegistrationRepository.getBansosRegistrationByUser("REJECTED,TAKEN")
                 if (response.isSuccessful) {
                     val list = response.body()?.data
                     _bansosRegistrationList.value = list as ArrayList<BansosStatusItem>

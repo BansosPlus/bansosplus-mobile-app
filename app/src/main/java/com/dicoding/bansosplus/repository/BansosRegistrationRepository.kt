@@ -11,7 +11,7 @@ class BansosRegistrationRepository(private val sessionManager: SessionManager) {
     suspend fun registerBansos(request: BansosRegistrationRequest): Response<BansosRegistrationResponse> {
         return RetrofitInstance.bansosRegistrationApi.registerBansos("Bearer " + sessionManager.fetchToken(), request)
     }
-    suspend fun getBansosRegistrationByUser(): Response<BansosStatusResponse> {
-        return RetrofitInstance.bansosRegistrationApi.getBansosRegistrationByUser("Bearer " + sessionManager.fetchToken())
+    suspend fun getBansosRegistrationByUser(status: String): Response<BansosStatusResponse> {
+        return RetrofitInstance.bansosRegistrationApi.getBansosRegistrationByUser("Bearer " + sessionManager.fetchToken(), status)
     }
 }
