@@ -2,6 +2,7 @@ package com.dicoding.bansosplus.navigation.views.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,9 +41,20 @@ class ProfileFragment : Fragment() {
 // get user data from viewmodel return bearer token
 //        viewModel.use
         binding.apply {
-            tvProfileNameUser.text = "${sessionManager.fetchName()?:""}"
-            tvProfileNikUser.text = "${sessionManager.fetchNIK()?:""}"
-            tvProfileKkUser.text = "${sessionManager.fetchNoKK()?:""}"
+            viewModel.profileData.observe(viewLifecycleOwner) { userDetails ->
+                if (userDetails != null) {
+                    tvProfileNameUser.text = userDetails.name
+                    tvProfileNikUser.text = userDetails.nik
+                    tvProfileKkUser.text = userDetails.noKk
+                    if (userDetails.imageUrl != "") {
+                        Glide.with(this@ProfileFragment)
+                            .load(userDetails.imageUrl)
+                            .into(ivProfileUser)
+                    }
+                }
+            }
+
+            viewModel.getUserData()
 //            Glide.with(this)
 //                .load(getImageUrl)
 //                .into(ivProfileUser)

@@ -24,5 +24,6 @@ data class UserItem(
     @field:SerializedName("role")
     val role: String,
 
-
+    @field:SerializedName("image_url")
+    val imageUrl: String,
 )

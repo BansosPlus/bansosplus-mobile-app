@@ -28,6 +28,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
         private val NOKK = stringPreferencesKey("no_kk")
         private val INCOME = stringPreferencesKey("income")
         private val ROLE = stringPreferencesKey("role")
+        private val IMAGEURL = stringPreferencesKey("image_url")
 //        private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
 
         fun getInstance(dataStore: DataStore<androidx.datastore.preferences.core.Preferences>): UserPreferences {
@@ -48,7 +49,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
             preferences[NOKK] = user.noKk
             preferences[INCOME] = user.income
             preferences[ROLE] = user.income
-//            preferences[IS_LOGIN_KEY] = true
+            preferences[IMAGEURL] = user.imageUrl
         }
     }
 
@@ -62,7 +63,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
                 preferences[NOKK] ?: "",
                 preferences[INCOME] ?: "",
                 preferences[ROLE] ?: "",
-//                preferences[IS_LOGIN_KEY] ?: false
+                preferences[IMAGEURL] ?: ""
             )
         }
     }

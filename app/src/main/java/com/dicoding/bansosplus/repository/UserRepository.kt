@@ -10,7 +10,4 @@ class UserRepository(private val sessionManager: SessionManager) {
     suspend fun get(): Response<UserResponse> {
         return RetrofitInstance.userApi.get("Bearer " + sessionManager.fetchToken())
     }
-
-//    fun getSession() = pref.getSession()
-
 }
