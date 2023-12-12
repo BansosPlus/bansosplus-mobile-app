@@ -190,4 +190,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
 
+    <Button
+        android:id="@+id/buttonQr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Validasi Bantuan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile_kk_user"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
