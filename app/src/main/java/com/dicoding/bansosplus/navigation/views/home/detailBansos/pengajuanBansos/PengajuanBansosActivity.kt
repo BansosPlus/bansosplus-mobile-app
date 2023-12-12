@@ -14,12 +14,14 @@ import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.models.auth.BansosRegistrationRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.data.model.BansosItem
+import com.dicoding.bansosplus.pref.UserPreferences
 import com.dicoding.bansosplus.repository.BansosRegistrationRepository
 import com.dicoding.bansosplus.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class PengajuanBansosActivity : AppCompatActivity() {
     private lateinit var activitySessionManager: SessionManager
+//    private lateinit var userPreferences: UserPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pengajuan_bansos)

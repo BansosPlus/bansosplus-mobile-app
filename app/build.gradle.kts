@@ -66,6 +66,10 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+//    datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+
     // scan qr
     implementation("com.github.yuriy-budiyev:code-scanner:2.3.2")
     // Camera

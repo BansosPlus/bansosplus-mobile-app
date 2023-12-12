@@ -20,4 +20,9 @@ data class UserItem(
 
     @field:SerializedName("income")
     val income: String,
+
+    @field:SerializedName("role")
+    val role: String,
+
+
 )

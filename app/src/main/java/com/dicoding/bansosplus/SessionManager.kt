@@ -9,6 +9,8 @@ class SessionManager (context: Context) {
     companion object {
         const val NAME = "user_name"
         const val TOKEN = "user_token"
+        const val NIK = "user_nik"
+        const val NOKK = "user_no_kk"
     }
 
     fun saveName(name: String) {
@@ -25,5 +27,12 @@ class SessionManager (context: Context) {
 
     fun fetchToken(): String? {
         return prefs.getString(TOKEN, null)
+    }
+    fun fetchNIK(): String? {
+        return prefs.getString(NIK, null)
+    }
+
+    fun fetchNoKK(): String? {
+        return prefs.getString(NOKK, null)
     }
 }

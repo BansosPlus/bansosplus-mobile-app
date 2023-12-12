@@ -3,14 +3,12 @@ package com.dicoding.bansosplus.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.ActivityLoginBinding
 import com.dicoding.bansosplus.models.auth.LoginRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.repository.AuthRepository
-import com.dicoding.bansosplus.ui.register.RegisterActivity
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -34,12 +32,6 @@ class LoginActivity : AppCompatActivity() {
                     )
                 }
             }
-
-            tvRegisLink.setOnClickListener{
-                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
         }
     }
 
@@ -51,21 +43,14 @@ class LoginActivity : AppCompatActivity() {
         val response = authRepository.login(request)
         if (response.isSuccessful) {
             val user = response.body()?.data
-            user?.token?.let {
-                Log.d("SaveToken", "Saving Token: $it")
-                sessionManager.saveToken(it)
-            }
-
-            user?.name?.let {
-                Log.d("SaveName", "Saving Name: $it")
-                sessionManager.saveName(it)
-            }
+            user?.name?.let { sessionManager.saveName(it) }
+            user?.token?.let { sessionManager.saveToken(it) }
 
             val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
             startActivity(intent)
             finish()
         } else {
-            // TODO: Alert
+            //
         }
     }
 }
