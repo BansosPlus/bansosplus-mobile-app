@@ -18,17 +18,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
 
+    <!--    guideline-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
-        android:layout_width="406dp"
-        android:layout_height="508dp"
+        android:layout_width="404dp"
+        android:layout_height="683dp"
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_status_pengajuan"
-        app:layout_constraintVertical_bias="0.085" />
-    <!--    guideline-->
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline_start"
