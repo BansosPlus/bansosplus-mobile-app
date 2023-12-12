@@ -37,7 +37,7 @@ class ScanQrActivity : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
-        Log.e("QR", "start activity")
+        Log.e("QR Codes", "start activity")
 
         codeScanner()
 
@@ -63,7 +63,7 @@ class ScanQrActivity : AppCompatActivity() {
     }
 
     private fun codeScanner() {
-        Log.e("QR", "start scan")
+        Log.e("QR Codes", "start scan")
         codeScanner = CodeScanner(this, binding.scanner)
 
         codeScanner.apply {
@@ -77,7 +77,8 @@ class ScanQrActivity : AppCompatActivity() {
 
             decodeCallback = DecodeCallback {
                 runOnUiThread {
-                    viewModel.validateRegisStatus(it.text).toString()
+                    Log.e("QR Codes", "${it.text}")
+                    viewModel.validateRegisStatus(it.text)
                 }
             }
 
