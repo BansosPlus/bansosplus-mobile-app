@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
 
     <TextView
         android:id="@+id/tv_history_pengajuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Histori Pengajuan Bantuan"
+        android:paddingTop="-10dp"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -18,9 +20,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
-        android:layout_width="403dp"
-        android:layout_height="595dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

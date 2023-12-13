@@ -12,18 +12,18 @@
         android:id="@+id/navigation_bansos"
         android:icon="@drawable/ic_pouch_filled"
         app:showAsAction="ifRoom"
-        android:title="Bansos" />
+        android:title="@string/bansos" />
 
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history_filled"
         app:showAsAction="ifRoom"
-        android:title="History" />
+        android:title="@string/history" />
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_profile_filled"
         app:showAsAction="ifRoom"
-        android:title="Profile" />
+        android:title="@string/profile" />
 
 </menu>

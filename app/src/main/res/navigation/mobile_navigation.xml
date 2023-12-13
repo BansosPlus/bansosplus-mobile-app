@@ -15,21 +15,21 @@
     <fragment
         android:id="@+id/navigation_bansos"
         android:name="com.dicoding.bansosplus.navigation.views.bansos.BansosFragment"
-        android:label="Bansos"
+        android:label="@string/bansos"
         tools:layout="@layout/fragment_bansos" />
 
 <!--    history-->
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.dicoding.bansosplus.navigation.views.history.HistoryFragment"
-        android:label="History"
+        android:label="@string/history"
         tools:layout="@layout/fragment_history" />
 
 <!--    profile-->
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.dicoding.bansosplus.navigation.views.profile.ProfileFragment"
-        android:label="Profile"
+        android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 
 </navigation>

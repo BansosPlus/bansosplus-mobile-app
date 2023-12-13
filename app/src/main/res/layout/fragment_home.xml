@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeActivity">
+    tools:context="com.dicoding.bansosplus.navigation.views.home.HomeFragment">
 
     <!--    cardview isi data diri, dissapear kalo udh diisi-->
 
@@ -71,20 +71,21 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_lengkap_Data" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
-        android:layout_width="406dp"
-        android:layout_height="508dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_home_listbansos"
-        app:layout_constraintVertical_bias="0.085" />
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline_start"

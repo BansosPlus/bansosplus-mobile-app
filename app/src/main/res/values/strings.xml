@@ -11,4 +11,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="dummy_nik">521000*****21</string>
     <string name="dummy_kk">621000**********21</string>
+    <string name="bansos">Bansos</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
 </resources>
