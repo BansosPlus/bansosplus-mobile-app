@@ -6,471 +6,472 @@
     android:layout_height="match_parent"
     tools:context=".navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:paddingTop="8dp"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintStart_toStartOf="@id/vert_guideline_start"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
-
-    <TextView
-        android:id="@+id/tv_login_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:text="Isi Data Pribadi Anda"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
-
-    <TextView
-        android:id="@+id/tv_login_title_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="Data pribadi Anda digunakan untuk verifikasi bantuan yang diajukan"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_secondary"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login_title" />
-
-    <!--input nik    -->
-    <TextView
-        android:id="@+id/tv_nik"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="NIK"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_nik_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nik"
-        app:startIconDrawable="@drawable/ic_social_security"
-        >
-
-        <com.dicoding.bansosplus.ui.customview.CustomNIKEditText
-            android:id="@+id/et_nik"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <!--input nama lengkap    -->
-    <TextView
-        android:id="@+id/tv_nama"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Nama Lengkap"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nik_layout" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nestedView">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_nama_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-        app:startIconDrawable="@drawable/ic_person"
-        >
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="42dp"
+            android:layout_height="37dp"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
 
-        <EditText
-            android:id="@+id/et_nama"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="textPersonName"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--input no kk    -->
-    <TextView
-        android:id="@+id/tv_no_kk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Nomor Kartu Keluarga"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_nokk_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_no_kk"
-        app:startIconDrawable="@drawable/ic_document"
-        >
-        <com.dicoding.bansosplus.ui.customview.CustomKKEditText
-            android:id="@+id/et_no_kk"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:paddingVertical="16dp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-<!--penghasilan-->
-    <TextView
-        android:id="@+id/tv_income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Penghasilan per Tahun"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nokk_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_income_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_income"
-        app:startIconDrawable="@drawable/ic_monet"
-        >
-    <EditText
-        android:id="@+id/et_income"
-        android:layout_marginEnd="20dp"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedView"
+        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
-    </com.google.android.material.textfield.TextInputLayout>
-
-<!--    kualitas dinding-->
-    <TextView
-        android:id="@+id/tv_kualitas_dinding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Kualitas Dinding"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_income_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_kualitas_dinding_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding"
-        app:startIconDrawable="@drawable/wall_24"
-        >
-        <EditText
-            android:id="@+id/et_kualitas_dinding"
-            android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Isi Data Pribadi Anda"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_login_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="76dp"
+                android:width="350dp"
+                android:gravity="left"
+                android:text="Data pribadi Anda digunakan untuk verifikasi bantuan yang diajukan"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <!--input nik    -->
+            <TextView
+                android:id="@+id/tv_nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="NIK"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_nik_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nik"
+                app:startIconDrawable="@drawable/ic_social_security">
+
+                <com.dicoding.bansosplus.ui.customview.CustomNIKEditText
+                    android:id="@+id/et_nik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--input nama lengkap    -->
+            <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Nama Lengkap"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nik_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_nama_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nama"
+                app:startIconDrawable="@drawable/ic_person">
+
+                <EditText
+                    android:id="@+id/et_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="textPersonName"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--input no kk    -->
+            <TextView
+                android:id="@+id/tv_no_kk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Nomor Kartu Keluarga"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nama_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_nokk_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_no_kk"
+                app:startIconDrawable="@drawable/ic_document">
+
+                <com.dicoding.bansosplus.ui.customview.CustomKKEditText
+                    android:id="@+id/et_no_kk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--    jumalh makan-->
+            <!--penghasilan-->
+            <TextView
+                android:id="@+id/tv_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Penghasilan per Tahun"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nokk_layout" />
 
-    <TextView
-        android:id="@+id/tv_jumlah_makan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Jumlah Makan dalam Sehari"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding_layout" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_income_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_income"
+                app:startIconDrawable="@drawable/ic_monet">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_jumlah_makan_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                <EditText
+                    android:id="@+id/et_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    kualitas dinding-->
+            <TextView
+                android:id="@+id/tv_kualitas_dinding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Kualitas Dinding"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_income_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_kualitas_dinding_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding"
+                app:startIconDrawable="@drawable/wall_24">
+
+                <EditText
+                    android:id="@+id/et_kualitas_dinding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--    jumalh makan-->
+
+            <TextView
+                android:id="@+id/tv_jumlah_makan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Jumlah Makan dalam Sehari"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_jumlah_makan_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan"
+                app:startIconDrawable="@drawable/ic_rice_bowl">
+
+                <EditText
+                    android:id="@+id/et_jumlah_makan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- bahan bakar d rumah-->
+            <TextView
+                android:id="@+id/tv_bahan_bakar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Bahan Bakar di Rumah"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_bahan_bakar_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar"
+                app:startIconDrawable="@drawable/stove_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_bahan_bakar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- pendidikan-->
+            <TextView
+                android:id="@+id/tv_pendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Pendidikan Terakhir"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_pendidikan_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan"
+                app:startIconDrawable="@drawable/edu_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_pendidikan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- aset-->
+            <TextView
+                android:id="@+id/tv_aset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Jumlah Aset"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_aset_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_aset"
+                app:startIconDrawable="@drawable/asset"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_aset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- berobat-->
+            <TextView
+                android:id="@+id/tv_berobat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Kemampuan Berobat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_aset_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_berobat_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_berobat"
+                app:startIconDrawable="@drawable/healthcare_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_berobat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- tanggungan-->
+            <TextView
+                android:id="@+id/tv_tanggungan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Jumlah Tanggungan"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_berobat_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_tanggungan_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tanggungan"
+                app:startIconDrawable="@drawable/ic_tanggungan"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_tanggungan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        android:background="@color/light_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan"
-        app:startIconDrawable="@drawable/ic_rice_bowl"
-        >
-        <EditText
-            android:id="@+id/et_jumlah_makan"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintStart_toStartOf="parent">
 
-<!-- bahan bakar d rumah-->
-    <TextView
-        android:id="@+id/tv_bahan_bakar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Bahan Bakar di Rumah"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan_layout" />
+        <Button
+            android:id="@+id/btn_ajukan_bantuan"
+            android:layout_width="141dp"
+            android:layout_height="54dp"
+            android:backgroundTint="@color/blue"
+            android:text="Ajukan Bantuan"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.873"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_bahan_bakar_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar"
-        app:startIconDrawable="@drawable/stove_24"
-
-        >
-        <EditText
-            android:id="@+id/et_bahan_bakar"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- pendidikan-->
-    <TextView
-        android:id="@+id/tv_pendidikan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Pendidikan Terakhir"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_pendidikan_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan"
-        app:startIconDrawable="@drawable/edu_24"
-
-        >
-        <EditText
-            android:id="@+id/et_pendidikan"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!-- aset-->
-    <TextView
-        android:id="@+id/tv_aset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Jumlah Aset"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_aset_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_aset"
-        app:startIconDrawable="@drawable/asset"
-
-        >
-        <EditText
-            android:id="@+id/et_aset"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- berobat-->
-    <TextView
-        android:id="@+id/tv_berobat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Kemampuan Berobat"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_aset_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_berobat_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_berobat"
-        app:startIconDrawable="@drawable/healthcare_24"
-
-        >
-        <EditText
-            android:id="@+id/et_berobat"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- tanggungan-->
-    <TextView
-        android:id="@+id/tv_tanggungan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Jumlah Tanggungan"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_berobat_layout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_tanggungan_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tanggungan"
-        app:startIconDrawable="@drawable/ic_tanggungan"
-
-        >
-        <EditText
-            android:id="@+id/et_tanggungan"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
-            android:textSize="14sp"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Button
-        android:id="@+id/btn_ajukan_bantuan"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:backgroundTint="@color/blue"
-        android:text="Ajukan Bantuan"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tanggungan_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-<!--    app:layout_constraintTop_toBottomOf="@+id/tv_income_layout"-->
-
-    <!--guidelines-->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vert_guideline_mid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vert_guideline_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal_guideline_mid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="365dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal_guideline_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
