@@ -25,32 +25,33 @@ class LoginActivity : AppCompatActivity() {
 
         binding.apply {
             btnMasuk.setOnClickListener{
-                lifecycleScope.launch() {
                     login(
                         etEmail.text.toString().trim(),
                         etPassword.text.toString().trim()
                     )
-                }
             }
         }
     }
 
-    private suspend fun login(email: String, password: String) {
+    private  fun login(email: String, password: String) {
         val request = LoginRequest()
         request.email = email
         request.password = password
 
-        val response = authRepository.login(request)
-        if (response.isSuccessful) {
-            val user = response.body()?.data
-            user?.name?.let { sessionManager.saveName(it) }
-            user?.token?.let { sessionManager.saveToken(it) }
+        lifecycleScope.launch {
+            val response = authRepository.login(request)
+            if (response.isSuccessful) {
+                val user = response.body()?.data
+                user?.name?.let { sessionManager.saveName(it) }
+                user?.token?.let { sessionManager.saveToken(it) }
 
-            val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
-            startActivity(intent)
-            finish()
-        } else {
-            //
+                val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                //
+            }
         }
+
     }
 }

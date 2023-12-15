@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +21,7 @@ class HistoryListAdapter(
 ) : RecyclerView.Adapter<HistoryListAdapter.HistoryHolder>(){
     class HistoryHolder(val view: View, private val onItemClickListener: (BansosStatusItem) -> Unit) : RecyclerView.ViewHolder(view) {
         private var bansosNameTextView: TextView? = null
-        private var bansosStatusTextView: TextView? = null
+        private var bansosStatusTextView: Button? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
 
@@ -33,6 +34,7 @@ class HistoryListAdapter(
 
         fun bind(data: BansosStatusItem) {
             bansosNameTextView?.text = data.bansosName
+//            val cekStatus =
             bansosStatusTextView?.text = data.status
 
             data.createdAt?.let { date ->
