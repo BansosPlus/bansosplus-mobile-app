@@ -40,11 +40,6 @@
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_title" />
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        />-->
-
 <!--input nama akun   -->
     <TextView
         android:id="@+id/tv_email"
@@ -58,44 +53,68 @@
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        android:hint="Email Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_email"
+        >
+        <com.dicoding.bansosplus.ui.customview.CustomEmailEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="16dp"
+            android:paddingStart="16dp"
+            android:textColorHint="#8D6E63"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <!--input kata sandi    -->
+<!--    input kata sandi    -->
     <TextView
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Kata Sandi"
+        android:text="@string/kata_sandi"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_layout" />
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_password_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password"
-        android:hint="Kata Sandi Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_password"
+        app:endIconMode="password_toggle"
+        >
+
+        <com.dicoding.bansosplus.ui.customview.CustomPasswordEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:inputType="textPassword"
+            android:paddingVertical="16dp"
+            android:paddingStart="16dp"
+            android:textColorHint="#8D6E63"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_masuk"
@@ -109,7 +128,7 @@
         android:text="@string/masuk"
         android:textSize="16sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintTop_toBottomOf="@+id/tv_password_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

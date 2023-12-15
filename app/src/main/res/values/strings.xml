@@ -14,4 +14,8 @@
     <string name="bansos">Bansos</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
+    <string name="alert_invalid_email">This is an Invalid Email</string>
+    <string name="email_anda">Email Anda</string>
+    <string name="kata_sandi">Kata Sandi</string>
+
 </resources>
