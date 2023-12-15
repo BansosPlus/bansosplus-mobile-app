@@ -58,18 +58,32 @@
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
 
-    <EditText
-        android:id="@+id/et_nama"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_nama_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-        android:hint="Nama Lengkap Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_person"
+        >
+<!--        buat custom viewnya-->
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:textSize="14sp"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <!--input email    -->
     <TextView
@@ -82,46 +96,64 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_nama" />
-
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_layout" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        android:hint="Email Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_email"
+        >
+        <com.dicoding.bansosplus.ui.customview.CustomEmailEditText
+            android:id="@+id/et_email"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:textSize="14sp"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!--input nomor handphone    -->
+
     <TextView
         android:id="@+id/tv_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Phone"
+        android:text="Nomor HP"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_layout" />
 
-    <EditText
-        android:id="@+id/et_phone"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_phone_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_phone"
-        android:hint="Nomor Handphone Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_phone"
+        >
+        <com.dicoding.bansosplus.ui.customview.CustomViewPhoneEditText
+            android:id="@+id/et_phone"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingVertical="16dp"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <!--input kata sandi 1    -->
     <TextView
@@ -134,20 +166,29 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone_layout" />
 
-    <EditText
-        android:id="@+id/et_pass1"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_pass1_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pass1"
-        android:hint="Kata Sandi Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_password"
+        app:endIconMode="password_toggle"
+        >
+        <com.dicoding.bansosplus.ui.customview.CustomPasswordEditText
+            android:id="@+id/et_pass1"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingVertical="16dp"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!--input kata sandi 2    -->
     <TextView
@@ -160,24 +201,34 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pass1_layout" />
 
-    <EditText
-        android:id="@+id/et_pass2"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_pass2_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pass2"
-        android:hint="Kata Sandi Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_password"
+        app:endIconMode="password_toggle"
+        >
+
+        <com.dicoding.bansosplus.ui.customview.CustomPasswordEditText
+            android:id="@+id/et_pass2"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:textSize="14sp"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_daftar"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_width="match_parent"
@@ -187,7 +238,7 @@
         android:text="@string/daftar"
         android:textSize="16sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pass2_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

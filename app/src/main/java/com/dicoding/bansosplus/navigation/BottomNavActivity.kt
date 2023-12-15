@@ -1,12 +1,9 @@
 package com.dicoding.bansosplus.navigation
 
-import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.databinding.ActivityBottomNavBinding
