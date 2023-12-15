@@ -57,18 +57,29 @@
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_title_2" />
 
-    <EditText
-        android:id="@+id/et_nik"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_nik_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nik"
-        android:hint="cth : 521*********012"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_social_security"
+        >
+
+        <com.dicoding.bansosplus.ui.customview.CustomNIKEditText
+            android:id="@+id/et_nik"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:textSize="14sp"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <!--input nama lengkap    -->
     <TextView
@@ -81,22 +92,31 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_nik" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nik_layout" />
 
-    <EditText
-        android:id="@+id/et_nama"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_nama_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-        android:hint="Nama Lengkap Anda"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_person"
+        >
 
-    <!--input kata sandi 1    -->
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:textSize="14sp"
+            android:inputType="textPersonName"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--input no kk    -->
     <TextView
         android:id="@+id/tv_no_kk"
         android:layout_width="wrap_content"
@@ -107,22 +127,31 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_nama" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_layout" />
 
-    <EditText
-        android:id="@+id/et_no_kk"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_nokk_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_no_kk"
-        android:hint="Nomor KK"
-        android:textSize="14sp"
-        android:inputType="text"
-        />
+        app:startIconDrawable="@drawable/ic_document"
+        >
+        <EditText
+            android:id="@+id/et_no_kk"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingVertical="16dp"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <!--input kata sandi 2    -->
+
+
     <TextView
         android:id="@+id/tv_income"
         android:layout_width="wrap_content"
@@ -133,20 +162,28 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/et_no_kk" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nokk_layout" />
 
-    <EditText
-        android:id="@+id/et_income"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_income_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_income"
-        android:hint="cth : Rp 0.00,-"
+        app:startIconDrawable="@drawable/ic_monet"
+        >
+    <EditText
+        android:id="@+id/et_income"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
         android:textSize="14sp"
         android:inputType="text"
         />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_ajukan_bantuan"
@@ -160,7 +197,7 @@
         android:text="Ajukan Bantuan"
         android:textSize="16sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/et_income"
+        app:layout_constraintTop_toBottomOf="@+id/tv_income_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
