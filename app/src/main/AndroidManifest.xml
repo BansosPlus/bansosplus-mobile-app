@@ -21,7 +21,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".navigation.views.history.feedback.FeedbackActivity"
+            android:name=".navigation.views.history.detailHistory.feedback.FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigation.views.history.detailHistory.DetailHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity"
