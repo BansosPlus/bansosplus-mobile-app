@@ -1,6 +1,7 @@
 package com.dicoding.bansosplus.navigation.views.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,19 +24,29 @@ class StatusBansosListAdapter(
     class StatusBansosHolder(val view: View, private val onItemClickListener: (BansosStatusItem) -> Unit) : RecyclerView.ViewHolder(view) {
         private var bansosNameTextView: TextView? = null
         private var bansosStatusTextView: TextView? = null
+        private var bansosStatusImageView: ImageView? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
             bansosStatusTextView = view.findViewById(R.id.registrationStatus)
+            bansosStatusImageView = view.findViewById(R.id.registrationStatus_level)
             bansosExpiryDateView = view.findViewById(R.id.expiryDateText)
             bansosImageUrl = view.findViewById(R.id.bansosImage)
         }
 
         fun bind(data: BansosStatusItem) {
             bansosNameTextView?.text = data.bansosName
-            bansosStatusTextView?.text = data.status
+            val cekStatus = data.status
+            Log.d("cek status", cekStatus)
+            if(cekStatus == "ACCEPTED"){
+                bansosStatusTextView?.text = "DITERIMA"
+                bansosStatusImageView?.setImageResource(R.drawable.ic_status_diterima)
+            }else if(cekStatus == "ON_PROGRESS"){
+                bansosStatusTextView?.text = "DIPROSES"
+                bansosStatusImageView?.setImageResource(R.drawable.ic_stastus_diproses)
+            }
 
             data.createdAt?.let { date ->
                 val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
