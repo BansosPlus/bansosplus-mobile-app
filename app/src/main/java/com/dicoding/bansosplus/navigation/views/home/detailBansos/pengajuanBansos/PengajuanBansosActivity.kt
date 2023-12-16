@@ -15,8 +15,6 @@ import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.models.auth.BansosRegistrationRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
-import com.dicoding.bansosplus.navigation.data.model.BansosItem
-import com.dicoding.bansosplus.pref.UserPreferences
 import com.dicoding.bansosplus.repository.BansosRegistrationRepository
 import com.dicoding.bansosplus.repository.UserRepository
 import kotlinx.coroutines.launch

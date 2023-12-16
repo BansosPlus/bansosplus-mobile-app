@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -43,28 +45,88 @@ class ProfileFragment : Fragment() {
 
         sessionManager = SessionManager(requireContext())
 
-        binding.buttonQr.setOnClickListener(){
-            val intent = Intent(requireContext(), ScanQrActivity::class.java)
-            startActivity(intent)
+        if (sessionManager.fetchRole() !== "admin") {
+            binding.buttonQr.visibility = View.GONE
+        } else {
+            binding.buttonQr.setOnClickListener(){
+                val intent = Intent(requireContext(), ScanQrActivity::class.java)
+                startActivity(intent)
+            }
         }
 
-//        if (sessionManager.fetchRole() !== "admin") {
-//            binding.buttonQr.visibility = View.GONE
-//        } else {
-//            binding.buttonQr.setOnClickListener(){
-//                val intent = Intent(requireContext(), ScanQrActivity::class.java)
-//                startActivity(intent)
-//            }
-//        }
+
 
         viewModel = ViewModelProvider(this, ProfileViewModelFactory(sessionManager)).get(ProfileViewModel::class.java)
 
         binding.apply {
+            val incomeSpinner: Spinner = spinnerIncome
+            val luasLantaiSpinner: Spinner = spinnerLuasLantai
+            val kualitasDindingSpinner: Spinner = spinnerKualitasDinding
+            val jumlahMakanSpinner: Spinner = spinnerJumlahMakan
+            val bahanBakarSpinner: Spinner = spinnerBahanBakar
+            val pendidikanSpinner: Spinner = spinnerPendidikan
+            val asetSpinner: Spinner = spinnerAset
+            val berobatSpinner: Spinner = spinnerBerobat
+            val tanggunganSpinner: Spinner = spinnerTanggungan
+
+            // Value Array
+            val incomeArray = arrayOf("", "<500 ribu", "500 ribu-1 juta", "1 juta-1.5 juta", ">1.5 juta")
+            val luasLantaiArray = arrayOf("", "Diatas 8m²", "Dibawah 8m²")
+            val kualitasDindingArray = arrayOf("", "Buruk", "Normal", "Bagus")
+            val jumlahMakanArray = arrayOf("", "0", "1", "2", "3")
+            val bahanBakarArray = arrayOf("", "Kayu/Arang", "Gas/LPG")
+            val pendidikanArray = arrayOf("", "SD", "SMP", "SMA", "Sarjana")
+            val asetArray = arrayOf("", "<500 ribu", "500 ribu-1 juta", "1 juta-1.5 juta", ">1.5 juta")
+            val berobatArray = arrayOf("", "Mampu", "Tidak Mampu")
+            val tanggunganArray = arrayOf("", "0", "1", "2", ">2")
+
+            // Adapter
+            val incomeAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, incomeArray)
+            val luasLantaiAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, luasLantaiArray)
+            val kualitasDindingAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, kualitasDindingArray)
+            val jumlahMakanAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, jumlahMakanArray)
+            val bahanBakarAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, bahanBakarArray)
+            val pendidikanAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, pendidikanArray)
+            val asetAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, asetArray)
+            val berobatAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, berobatArray)
+            val tanggunganAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, tanggunganArray)
+
+            // Set Dropdown
+            incomeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            luasLantaiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            kualitasDindingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            jumlahMakanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            bahanBakarAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            pendidikanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            asetAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            berobatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            tanggunganAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+            // Set Adapter
+            incomeSpinner.adapter = incomeAdapter
+            luasLantaiSpinner.adapter = luasLantaiAdapter
+            kualitasDindingSpinner.adapter = kualitasDindingAdapter
+            jumlahMakanSpinner.adapter = jumlahMakanAdapter
+            bahanBakarSpinner.adapter = bahanBakarAdapter
+            pendidikanSpinner.adapter = pendidikanAdapter
+            asetSpinner.adapter = asetAdapter
+            berobatSpinner.adapter = berobatAdapter
+            tanggunganSpinner.adapter = tanggunganAdapter
+
             viewModel.profileData.observe(viewLifecycleOwner) { userDetails ->
                 if (userDetails != null) {
-                    tvProfileNameUser.text = userDetails.name
-                    tvProfileNikUser.text = userDetails.nik
-                    tvProfileKkUser.text = userDetails.noKk
+                    etNik.setText(userDetails.nik)
+                    etNama.setText(userDetails.name)
+                    etNoKk.setText(userDetails.noKk)
+                    incomeSpinner.setSelection(incomeArray.indexOf(userDetails.income))
+                    luasLantaiSpinner.setSelection(incomeArray.indexOf(userDetails.floorArea))
+                    kualitasDindingSpinner.setSelection(kualitasDindingArray.indexOf(userDetails.wallQuality))
+                    jumlahMakanSpinner.setSelection(jumlahMakanArray.indexOf(userDetails.numberOfMeals))
+                    bahanBakarSpinner.setSelection(bahanBakarArray.indexOf(userDetails.fuel))
+                    pendidikanSpinner.setSelection(pendidikanArray.indexOf(userDetails.education))
+                    asetSpinner.setSelection(asetArray.indexOf(userDetails.totalAsset))
+                    berobatSpinner.setSelection(berobatArray.indexOf(userDetails.treatment))
+                    tanggunganSpinner.setSelection(tanggunganArray.indexOf(userDetails.numberOfDependents))
                     if (userDetails.imageUrl != "") {
                         Glide.with(this@ProfileFragment)
                             .load(userDetails.imageUrl)
