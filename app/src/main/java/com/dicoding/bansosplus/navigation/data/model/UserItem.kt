@@ -27,6 +27,9 @@ data class UserItem(
     @field:SerializedName("income")
     val income: String,
 
+    @field:SerializedName("floor_area")
+    val floorArea: String,
+
     @field:SerializedName("wall_quality")
     val wallQuality: String,
 

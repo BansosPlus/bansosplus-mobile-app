@@ -29,6 +29,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
         private val ROLE = stringPreferencesKey("role")
         private val IMAGEURL = stringPreferencesKey("image_url")
         private val INCOME = stringPreferencesKey("income")
+        private val FLOORAREA = stringPreferencesKey("floor_area")
         private val WALLQUALITY = stringPreferencesKey("wall_quality")
         private val NUMBEROFMEALS = stringPreferencesKey("number_of_meals")
         private val FUEL = stringPreferencesKey("fuel")
@@ -56,6 +57,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
             preferences[ROLE] = user.income
             preferences[IMAGEURL] = user.imageUrl
             preferences[INCOME] = user.income
+            preferences[FLOORAREA] = user.floorArea
             preferences[WALLQUALITY] = user.wallQuality
             preferences[NUMBEROFMEALS] = user.numberOfMeals
             preferences[FUEL] = user.fuel
@@ -77,6 +79,7 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
                 preferences[ROLE] ?: "",
                 preferences[IMAGEURL] ?: "",
                 preferences[INCOME] ?: "",
+                preferences[FLOORAREA] ?: "",
                 preferences[WALLQUALITY] ?: "",
                 preferences[NUMBEROFMEALS] ?: "",
                 preferences[FUEL] ?: "",
