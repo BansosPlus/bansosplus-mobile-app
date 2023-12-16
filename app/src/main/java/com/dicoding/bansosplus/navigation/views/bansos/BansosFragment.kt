@@ -39,6 +39,7 @@ class BansosFragment : Fragment() {
 
         val adapter = StatusBansosListAdapter(ArrayList(), requireContext()) { selectedItem ->
             val intent = Intent(requireContext(), DiterimaBansosActivity::class.java)
+
             intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
             startActivity(intent)
         }

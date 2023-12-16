@@ -1,6 +1,7 @@
 package com.dicoding.bansosplus.navigation.views.bansos.acceptedBansos
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -53,6 +54,7 @@ class DiterimaBansosActivity : AppCompatActivity(){
                         val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
                         bansosExpiryDateView?.text = formattedDate
                     }
+                    Log.i("BANSOS DESCRIPTION", "${bansosDetails.description}")
                     bansosDescriptionView.text = bansosDetails.description
                     Glide.with(this)
                         .load(bansosDetails.imageUrl)

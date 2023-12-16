@@ -27,6 +27,9 @@
             android:name=".navigation.views.history.detailHistory.DetailHistoryActivity"
             android:exported="false" />
         <activity
+            android:name=".navigation.views.bansos.acceptedBansos.DiterimaBansosActivity"
+            android:exported="false" />
+        <activity
             android:name=".navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity"
             android:exported="false" />
         <activity

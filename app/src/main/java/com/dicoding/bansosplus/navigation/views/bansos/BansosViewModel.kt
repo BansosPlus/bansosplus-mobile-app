@@ -33,4 +33,6 @@ class BansosViewModel(private val sessionManager: SessionManager) : ViewModel() 
 
         }
     }
+
+
 }

@@ -7,14 +7,11 @@ data class AcceptedBansosItem(
     @field:SerializedName("id")
     val id: Int,
 
-    @field:SerializedName("name")
+    @field:SerializedName("bansos_name")
     val name: String,
 
     @field:SerializedName("type")
     val type: String,
-
-    @field:SerializedName("expiry_date")
-    val expiryDate: Date,
 
     @field:SerializedName("updated_at")
     val updatedAt: Date,
@@ -27,4 +24,7 @@ data class AcceptedBansosItem(
 
     @field:SerializedName("image_url")
     val imageUrl: String,
+
+    @field:SerializedName("status")
+    val status: String,
     )
