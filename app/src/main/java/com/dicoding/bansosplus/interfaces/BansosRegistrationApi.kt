@@ -1,5 +1,6 @@
 package com.dicoding.bansosplus.interfaces
 
+import com.dicoding.bansosplus.models.auth.AcceptedBansosResponse
 import com.dicoding.bansosplus.models.auth.BansosRegistrationRequest
 import com.dicoding.bansosplus.models.auth.BansosRegistrationResponse
 import com.dicoding.bansosplus.models.auth.BansosStatusResponse
@@ -26,4 +27,10 @@ interface BansosRegistrationApi {
         @Header("Authorization") token: String,
         @Query("bansos_registration_id") bansosRegistrationId: String
     ): Response<RegisStatusResponse>
+
+    @GET("api/bansos-registration")
+    suspend fun getBansosRegistrationDetail(
+        @Header("Authorization") token: String,
+        @Query("bansos_registration_id") bansosRegistrationId: String
+    ): Response<AcceptedBansosResponse>
 }

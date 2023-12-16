@@ -13,6 +13,9 @@ data class BansosStatusItem(
     @field:SerializedName("created_at")
     val createdAt: Date,
 
+    @field:SerializedName("updated_at")
+    val updatedAt: Date,
+
     @field:SerializedName("status")
     val status: String,
 

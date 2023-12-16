@@ -76,16 +76,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listBansosView"
+        android:layout_width="373dp"
+        android:layout_height="531dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_home_listbansos"
-        />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline_start"

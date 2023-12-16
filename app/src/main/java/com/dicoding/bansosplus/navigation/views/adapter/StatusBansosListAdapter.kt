@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.R
-import com.dicoding.bansosplus.navigation.data.model.BansosItem
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -24,6 +23,7 @@ class StatusBansosListAdapter(
     class StatusBansosHolder(val view: View, private val onItemClickListener: (BansosStatusItem) -> Unit) : RecyclerView.ViewHolder(view) {
         private var bansosNameTextView: TextView? = null
         private var bansosStatusTextView: TextView? = null
+        private var datePlaceholderView: TextView? = null
         private var bansosStatusImageView: ImageView? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
@@ -32,6 +32,7 @@ class StatusBansosListAdapter(
             bansosNameTextView = view.findViewById(R.id.bansosName)
             bansosStatusTextView = view.findViewById(R.id.registrationStatus)
             bansosStatusImageView = view.findViewById(R.id.registrationStatus_level)
+            datePlaceholderView = view.findViewById(R.id.expiryDate)
             bansosExpiryDateView = view.findViewById(R.id.expiryDateText)
             bansosImageUrl = view.findViewById(R.id.bansosImage)
         }
@@ -42,16 +43,27 @@ class StatusBansosListAdapter(
             Log.d("cek status", cekStatus)
             if(cekStatus == "ACCEPTED"){
                 bansosStatusTextView?.text = "DITERIMA"
+
                 bansosStatusImageView?.setImageResource(R.drawable.ic_status_diterima)
+                view.setOnClickListener{
+                    onItemClickListener.invoke(data)
+                }
+
+                data.updatedAt?.let { date ->
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    val formattedDate = dateFormat.format(date)
+                    datePlaceholderView?.text = "Diterima pada: "
+                    bansosExpiryDateView?.text = formattedDate
+                }
             }else if(cekStatus == "ON_PROGRESS"){
                 bansosStatusTextView?.text = "DIPROSES"
                 bansosStatusImageView?.setImageResource(R.drawable.ic_stastus_diproses)
-            }
 
-            data.createdAt?.let { date ->
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                val formattedDate = dateFormat.format(date)
-                bansosExpiryDateView?.text = formattedDate
+                data.createdAt?.let { date ->
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    val formattedDate = dateFormat.format(date)
+                    bansosExpiryDateView?.text = formattedDate
+                }
             }
 
             bansosImageUrl?.let {
@@ -60,9 +72,6 @@ class StatusBansosListAdapter(
                     .into(it)
             }
 
-            view.setOnClickListener{
-                onItemClickListener.invoke(data)
-            }
         }
     }
 

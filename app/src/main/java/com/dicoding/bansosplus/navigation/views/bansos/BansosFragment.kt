@@ -13,6 +13,7 @@ import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.FragmentBansosBinding
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import com.dicoding.bansosplus.navigation.views.adapter.StatusBansosListAdapter
+import com.dicoding.bansosplus.navigation.views.bansos.acceptedBansos.DiterimaBansosActivity
 import com.dicoding.bansosplus.navigation.views.home.detailBansos.DetailBansosActivity
 
 class BansosFragment : Fragment() {
@@ -37,8 +38,8 @@ class BansosFragment : Fragment() {
         binding.listBansosView.layoutManager = LinearLayoutManager(context)
 
         val adapter = StatusBansosListAdapter(ArrayList(), requireContext()) { selectedItem ->
-            val intent = Intent(requireContext(), DetailBansosActivity::class.java)
-            intent.putExtra("bansosId", selectedItem.id.toString())
+            val intent = Intent(requireContext(), DiterimaBansosActivity::class.java)
+            intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
             startActivity(intent)
         }
 
