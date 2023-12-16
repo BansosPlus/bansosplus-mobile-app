@@ -26,10 +26,16 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
         private val TOKEN = stringPreferencesKey("token")
         private val NIK = stringPreferencesKey("nik")
         private val NOKK = stringPreferencesKey("no_kk")
-        private val INCOME = stringPreferencesKey("income")
         private val ROLE = stringPreferencesKey("role")
         private val IMAGEURL = stringPreferencesKey("image_url")
-//        private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
+        private val INCOME = stringPreferencesKey("income")
+        private val WALLQUALITY = stringPreferencesKey("wall_quality")
+        private val NUMBEROFMEALS = stringPreferencesKey("number_of_meals")
+        private val FUEL = stringPreferencesKey("fuel")
+        private val EDUCATION = stringPreferencesKey("education")
+        private val TOTALASSET = stringPreferencesKey("total_asset")
+        private val TREATMENT = stringPreferencesKey("treatment")
+        private val NUMBEROFDEPENDENTS = stringPreferencesKey("number_of_dependents")
 
         fun getInstance(dataStore: DataStore<androidx.datastore.preferences.core.Preferences>): UserPreferences {
             return INSTANCE ?: synchronized(this) {
@@ -47,9 +53,16 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
             preferences[TOKEN] = user.token
             preferences[NIK] = user.nik
             preferences[NOKK] = user.noKk
-            preferences[INCOME] = user.income
             preferences[ROLE] = user.income
             preferences[IMAGEURL] = user.imageUrl
+            preferences[INCOME] = user.income
+            preferences[WALLQUALITY] = user.wallQuality
+            preferences[NUMBEROFMEALS] = user.numberOfMeals
+            preferences[FUEL] = user.fuel
+            preferences[EDUCATION] = user.education
+            preferences[TOTALASSET] = user.totalAsset
+            preferences[TREATMENT] = user.treatment
+            preferences[NUMBEROFDEPENDENTS]= user.numberOfDependents
         }
     }
 
@@ -61,9 +74,16 @@ class UserPreferences internal constructor(private val dataStore: DataStore<Pref
                 preferences[TOKEN] ?: "",
                 preferences[NIK] ?: "",
                 preferences[NOKK] ?: "",
-                preferences[INCOME] ?: "",
                 preferences[ROLE] ?: "",
-                preferences[IMAGEURL] ?: ""
+                preferences[IMAGEURL] ?: "",
+                preferences[INCOME] ?: "",
+                preferences[WALLQUALITY] ?: "",
+                preferences[NUMBEROFMEALS] ?: "",
+                preferences[FUEL] ?: "",
+                preferences[EDUCATION] ?: "",
+                preferences[TOTALASSET] ?: "",
+                preferences[TREATMENT] ?: "",
+                preferences[NUMBEROFDEPENDENTS] ?: ""
             )
         }
     }

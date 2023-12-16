@@ -30,11 +30,12 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedView"
-        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintVertical_bias="1.0">
@@ -181,25 +182,45 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_nokk_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_income_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_income"
-                app:startIconDrawable="@drawable/ic_monet">
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_income"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_income_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/income_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_monet" />
+
+                        <Spinner
+                            android:id="@+id/spinner_income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <!--    kualitas dinding-->
             <TextView
@@ -214,25 +235,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_income_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_kualitas_dinding_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding"
-                app:startIconDrawable="@drawable/wall_24">
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_kualitas_dinding"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_kualitas_dinding_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/kualitas_dinding_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/wall_24" />
+
+                        <Spinner
+                            android:id="@+id/spinner_kualitas_dinding"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <!--    jumalh makan-->
@@ -249,25 +289,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_jumlah_makan_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan"
-                app:startIconDrawable="@drawable/ic_rice_bowl">
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_jumlah_makan"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_jumlah_makan_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/jumlah_makan_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_rice_bowl" />
+
+                        <Spinner
+                            android:id="@+id/spinner_jumlah_makan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- bahan bakar d rumah-->
             <TextView
@@ -282,27 +341,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_bahan_bakar_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar"
-                app:startIconDrawable="@drawable/stove_24"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                >
-
-                <EditText
-                    android:id="@+id/et_bahan_bakar"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_bahan_bakar_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/bahan_bakar_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/stove_24" />
+
+                        <Spinner
+                            android:id="@+id/spinner_bahan_bakar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- pendidikan-->
             <TextView
@@ -317,28 +393,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_pendidikan_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan"
-                app:startIconDrawable="@drawable/edu_24"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                >
-
-                <EditText
-                    android:id="@+id/et_pendidikan"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_pendidikan_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/pendidikan_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/edu_24" />
+
+                        <Spinner
+                            android:id="@+id/spinner_pendidikan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- aset-->
             <TextView
@@ -353,27 +445,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_aset_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_aset"
-                app:startIconDrawable="@drawable/asset"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                >
-
-                <EditText
-                    android:id="@+id/et_aset"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_aset_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/aset_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/asset" />
+
+                        <Spinner
+                            android:id="@+id/spinner_aset"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- berobat-->
             <TextView
@@ -388,27 +497,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_aset_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_berobat_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_berobat"
-                app:startIconDrawable="@drawable/healthcare_24"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                >
-
-                <EditText
-                    android:id="@+id/et_berobat"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_berobat_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/berobat_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/healthcare_24" />
+
+                        <Spinner
+                            android:id="@+id/spinner_berobat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- tanggungan-->
             <TextView
@@ -423,27 +549,44 @@
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_berobat_layout" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_tanggungan_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tanggungan"
-                app:startIconDrawable="@drawable/ic_tanggungan"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                >
-
-                <EditText
-                    android:id="@+id/et_tanggungan"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_tanggungan_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="text"
-                    android:paddingVertical="16dp"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/tanggungan_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_tanggungan" />
+
+                        <Spinner
+                            android:id="@+id/spinner_tanggungan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingVertical="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
