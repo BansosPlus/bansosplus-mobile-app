@@ -17,16 +17,56 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/statusRegis"
-        android:layout_width="104dp"
-        android:layout_height="53dp"
-        android:text="STATUS"
+        android:id="@+id/recipientName"
+        android:layout_width="181dp"
+        android:layout_height="39dp"
+        android:text=""
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanner" />
+        app:layout_constraintTop_toBottomOf="@+id/scanner"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <ImageView
+        android:id="@+id/statusRegisImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recipientName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scanner"
+        app:layout_constraintVertical_bias="0.493"
+        />
+
+    <TextView
+        android:id="@+id/takenWithPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/recipientName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/statusRegisImage"
+        app:layout_constraintTop_toBottomOf="@+id/scanner"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/takenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toEndOf="@+id/statusRegisImage"
+        app:layout_constraintTop_toBottomOf="@+id/recipientName"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

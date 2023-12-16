@@ -28,6 +28,7 @@ class HistoryListAdapter(
         private var bansosStatusImageView: ImageView? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
+        private var datePlaceholderView: TextView? = null
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
@@ -35,6 +36,7 @@ class HistoryListAdapter(
             bansosStatusImageView = view.findViewById(R.id.registrationStatus_level)
             bansosExpiryDateView = view.findViewById(R.id.expiryDateText)
             bansosImageUrl = view.findViewById(R.id.bansosImage)
+            datePlaceholderView = view.findViewById(R.id.expiryDate)
         }
 
         fun bind(data: BansosStatusItem) {
@@ -44,14 +46,21 @@ class HistoryListAdapter(
             if(cekStatus == "REJECTED"){
                 bansosStatusTextView?.text = "DITOLAK"
                 bansosStatusImageView?.setImageResource(R.drawable.ic_status_ditolak)
+                datePlaceholderView?.text = "Ditolak pada: "
+                data.updatedAt?.let { date ->
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    val formattedDate = dateFormat.format(date)
+                    bansosExpiryDateView?.text = formattedDate
+                }
             }else if(cekStatus == "TAKEN"){
                 bansosStatusTextView?.text = "DIAMBIL"
                 bansosStatusImageView?.setImageResource(R.drawable.ic_status_diambil)
-            }
-            data.createdAt?.let { date ->
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                val formattedDate = dateFormat.format(date)
-                bansosExpiryDateView?.text = formattedDate
+                datePlaceholderView?.text = "Diambil pada: "
+                data.updatedAt?.let { date ->
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    val formattedDate = dateFormat.format(date)
+                    bansosExpiryDateView?.text = formattedDate
+                }
             }
 
             bansosImageUrl?.let {

@@ -21,7 +21,11 @@ import com.dicoding.bansosplus.navigation.data.model.ValidateRegisItem
 import java.util.Timer
 import java.util.TimerTask
 import androidx.lifecycle.Observer
+import com.dicoding.bansosplus.R
+import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.views.profile.ProfileFragment
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 class ScanQrActivity : AppCompatActivity() {
@@ -37,8 +41,6 @@ class ScanQrActivity : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
-        Log.e("QR Codes", "start activity")
-
         codeScanner()
 
         setPermission()
@@ -46,16 +48,31 @@ class ScanQrActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, ScanQrViewModelFactory(sessionManager)).get(ScanQrViewModel::class.java)
 
         val status = Observer<ValidateRegisItem?> { newStatus ->
+            Log.e("QR Codes", "new status: ${newStatus}")
             if (newStatus != null) {
-                binding.statusRegis.text = newStatus.status
-
-                val task = object : TimerTask() {
-                    override fun run() {
-                        val intent = Intent(this@ScanQrActivity, ProfileFragment::class.java)
-                        startActivity(intent)
+                Log.e("QR Codes", "new status: ${newStatus.status}")
+                if (newStatus.status == "TAKEN") {
+                    binding.takenWithPlaceholder.text = "Diambil oleh:"
+                    binding.recipientName.text = newStatus.userName
+                    newStatus.updatedAt.let { value ->
+                        val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
+                        binding.takenDate.text = "Pada tanggal: ${formattedDate}"
                     }
+
+                    binding.statusRegisImage.setImageResource(R.drawable.checklist)
+
+                    val task = object : TimerTask() {
+                        override fun run() {
+                            val intent = Intent(this@ScanQrActivity, BottomNavActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+                    Timer().schedule(task, 4000)
+                } else {
+                    binding.statusRegisImage.setImageResource(R.drawable.delete_button)
+                    binding.recipientName.text = "QR Tidak Valid"
                 }
-                Timer().schedule(task, 5000)
             }
         }
         viewModel.bansosStatusItem.observe(this, status)

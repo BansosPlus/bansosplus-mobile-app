@@ -41,8 +41,6 @@ class HistoryFragment : Fragment() {
 
         val adapter = HistoryListAdapter(ArrayList(), requireContext()) { selectedItem ->
 
-            Log.d("FEEDBACK PAGE", "bansos id : ${selectedItem.bansosId}")
-            Log.d("FEEDBACK PAGE", "bansos regis id : ${selectedItem.id}")
             val intent = Intent(requireContext(), DetailHistoryActivity::class.java)
             intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
             intent.putExtra("bansosId", selectedItem.bansosId.toString())
