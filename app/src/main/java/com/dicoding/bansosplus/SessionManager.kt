@@ -11,6 +11,7 @@ class SessionManager (context: Context) {
         const val TOKEN = "user_token"
         const val NIK = "user_nik"
         const val NOKK = "user_no_kk"
+        const val ROLE = "user_role"
     }
 
     fun saveName(name: String) {
@@ -20,6 +21,9 @@ class SessionManager (context: Context) {
     fun saveToken(token: String) {
         prefs.edit().putString(TOKEN, token).apply()
     }
+    fun saveRole(role: String) {
+        prefs.edit().putString(ROLE, role).apply()
+    }
 
     fun fetchName(): String? {
         return prefs.getString(NAME, null)
@@ -28,6 +32,11 @@ class SessionManager (context: Context) {
     fun fetchToken(): String? {
         return prefs.getString(TOKEN, null)
     }
+
+    fun fetchRole(): String? {
+        return prefs.getString(ROLE, null)
+    }
+
     fun fetchNIK(): String? {
         return prefs.getString(NIK, null)
     }

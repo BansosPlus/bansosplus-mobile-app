@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.WelcomeActivity
 import com.dicoding.bansosplus.databinding.ActivityLoginBinding
 import com.dicoding.bansosplus.models.auth.LoginRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
@@ -24,6 +25,11 @@ class LoginActivity : AppCompatActivity() {
         sessionManager = SessionManager(this)
 
         binding.apply {
+            backButton.setOnClickListener {
+                val intent = Intent(this@LoginActivity, WelcomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             btnMasuk.setOnClickListener{
                     login(
                         etEmail.text.toString().trim(),
@@ -44,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 val user = response.body()?.data
                 user?.name?.let { sessionManager.saveName(it) }
                 user?.token?.let { sessionManager.saveToken(it) }
+                user?.role?.let { sessionManager.saveRole(it) }
 
                 val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
                 startActivity(intent)

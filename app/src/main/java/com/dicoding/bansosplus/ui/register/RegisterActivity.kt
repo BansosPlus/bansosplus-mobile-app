@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.WelcomeActivity
 import com.dicoding.bansosplus.databinding.ActivityRegisterBinding
 import com.dicoding.bansosplus.models.auth.RegisterRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
@@ -26,6 +27,12 @@ class RegisterActivity : AppCompatActivity() {
         sessionManager = SessionManager(this)
 
         binding.apply {
+            backButton.setOnClickListener {
+                val intent = Intent(this@RegisterActivity, WelcomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
             btnDaftar.setOnClickListener{
                 lifecycleScope.launch() {
                     register(

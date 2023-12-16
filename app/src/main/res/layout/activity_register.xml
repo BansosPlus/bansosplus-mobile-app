@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <ImageView
-        android:id="@+id/regis_back_arrow"
+    <ImageButton
+        android:id="@+id/backButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:paddingStart="16dp"
         android:paddingTop="8dp"
-        android:src="@drawable/ic_arrow_back"
+        android:background="@null"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <TextView
         android:id="@+id/tv_login_title"
