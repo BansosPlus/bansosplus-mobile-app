@@ -17,32 +17,26 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
-    <ImageView
-        android:id="@+id/iv_settings"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/ic_settings"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile"/>
+
+    <!--    nama-->
 
     <ImageView
         android:id="@+id/iv_profile_user"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="32dp"
         android:src="@drawable/img_profile_blank"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_settings"/>
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile"
+        app:layout_constraintVertical_bias="0.057" />
 
-<!--    nama-->
     <TextView
         android:id="@+id/tv_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:gravity="center"
         android:text="Nama"
         android:textColor="@color/black"
@@ -66,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Warga RT"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="normal"
@@ -102,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/dummy_nik"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="normal"
@@ -138,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/dummy_kk"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="normal"
@@ -146,19 +140,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_profile_kk" />
 
 <!--    logoutbutton-->
-    <Button
-        android:id="@+id/btn_keluar"
-        android:paddingHorizontal="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingVertical="4dp"
-        android:backgroundTint="@color/dark_red"
-        android:text="KELUAR"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <!--    guideline-->
 
@@ -192,15 +173,27 @@
 
     <Button
         android:id="@+id/buttonQr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="165dp"
+        android:layout_height="67dp"
         android:layout_marginTop="16dp"
-        android:text="Validasi Bantuan"
+        android:text="Bagikan Bantuan"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_profile_kk_user"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.586" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toEndOf="@+id/tv_profile"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
