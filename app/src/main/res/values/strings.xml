@@ -16,6 +16,8 @@
     <string name="profile">Profile</string>
     <string name="alert_invalid_email">Email ini invalid!</string>
     <string name="alert_invalid_phone">Nomor HP ini invalid!</string>
+    <string name="alert_invalid_kk">Nomor KK ini invalid!</string>
+    <string name="alert_invalid_nik">NIK ini invalid!</string>
     <string name="email_anda">Email Anda</string>
     <string name="kata_sandi">Kata Sandi</string>
 

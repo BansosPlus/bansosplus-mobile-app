@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.ActivityFeedbackBinding
 import com.dicoding.bansosplus.models.auth.FeedbackRequest
@@ -33,75 +34,69 @@ class FeedbackActivity : AppCompatActivity() {
             finish()
         }
 
+        val intent = intent
         if (intent.hasExtra("bansosId")) {
             val bansosId = intent.getStringExtra("bansosId")
-            val desc = binding.etFeedback.text
-
-            var finalRating = ""
+            var rating =""
             if (bansosId != null){
-                lifecycleScope.launch() {
-                    try {
-                        val response = UserRepository(activitySessionManager).get()
-                        if (response.isSuccessful){
-                            val user = response.body()?.data
-                            Log.i("BANSOS", "Get user successfully")
-
-                            if (user != null){
-                                var rating="0"
-                                binding.apply {
-                                    ivStarRate1.setOnClickListener{
-                                        rating = ivStarRate1.contentDescription.toString()
-                                        Log.i("rating1", rating)
-
-                                    }
-                                    ivStarRate2.setOnClickListener{
-                                        rating = ivStarRate2.contentDescription.toString()
-                                        Log.i("rating2", rating)
-
-                                    }
-                                    ivStarRate3.setOnClickListener{
-                                        rating = ivStarRate3.contentDescription.toString()
-                                        Log.i("rating3", rating)
-                                    }
-                                    ivStarRate4.setOnClickListener{
-                                        rating = ivStarRate4.contentDescription.toString()
-                                        Log.i("rating4", rating)
-                                    }
-                                    ivStarRate5.setOnClickListener{
-                                        rating = ivStarRate5.contentDescription.toString()
-                                        Log.i("rating5", rating)
-                                    }
-                                }
-                                finalRating = rating
-                                Log.d("id", bansosId.toString() )
-                                Log.d("score", finalRating )
-                                Log.d("desc", desc.toString() )
-                            }
-
-                        }else {
-                            Log.d("id", bansosId.toString() )
-                            Log.d("score", finalRating )
-                            Log.d("desc", desc.toString() )
-                            Log.e("BANSOS", "Response failed")
-                        }
-                    }catch (e: Exception) {
-                        Log.e("BANSOS", "Connection failed")
+                binding.apply {
+                    ivStarRate1.setOnClickListener{
+                        rating = ivStarRate1.contentDescription.toString()
+                        ivStarRate1.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate2.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate3.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate4.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate5.setImageResource(R.drawable.ic_star_outline)
+                    }
+                    ivStarRate2.setOnClickListener{
+                        rating = ivStarRate2.contentDescription.toString()
+                        ivStarRate1.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate2.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate3.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate4.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate5.setImageResource(R.drawable.ic_star_outline)
+                    }
+                    ivStarRate3.setOnClickListener{
+                        rating = ivStarRate3.contentDescription.toString()
+                        ivStarRate1.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate2.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate3.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate4.setImageResource(R.drawable.ic_star_outline)
+                        ivStarRate5.setImageResource(R.drawable.ic_star_outline)
+                    }
+                    ivStarRate4.setOnClickListener{
+                        rating = ivStarRate4.contentDescription.toString()
+                        ivStarRate1.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate2.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate3.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate4.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate5.setImageResource(R.drawable.ic_star_outline)
+                    }
+                    ivStarRate5.setOnClickListener{
+                        rating = ivStarRate5.contentDescription.toString()
+                        ivStarRate1.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate2.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate3.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate4.setImageResource(R.drawable.ic_star_filled)
+                        ivStarRate5.setImageResource(R.drawable.ic_star_filled)
                     }
                 }
 
-                val btnUploadFeedback: Button = binding.btnFeedback
-                btnUploadFeedback.setOnClickListener{
-                    lifecycleScope.launch() {
+
+                Log.d("rating", rating)
+                Log.d("desc", binding.etFeedback.text.toString())
+                val btnAddFeedback: Button = binding.btnFeedback
+                btnAddFeedback.setOnClickListener{
+                    lifecycleScope.launch {
                         uploadFeedback(
                             bansosId.toInt(),
-                            finalRating.toInt(),
-                            desc.toString()
+                            rating.toInt(),
+                            binding.etFeedback.text.toString()
                         )
                     }
                 }
-
-
             }
+
         } else{
             Toast.makeText(this, "No bansosId found in the intent", Toast.LENGTH_SHORT).show()
             finish()

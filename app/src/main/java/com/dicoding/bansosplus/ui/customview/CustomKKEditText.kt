@@ -30,7 +30,7 @@ class CustomKKEditText : TextInputEditText {
 
             override fun afterTextChanged(p0: Editable?) {
                 error = if (p0!!.isNotEmpty() && p0.toString().length < 16 || p0!!.isNotEmpty() && p0.toString().length > 16) context.getString(
-                    R.string.alert_invalid_phone) else null
+                    R.string.alert_invalid_kk) else null
             }
 
         })
