@@ -41,6 +41,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
             if (bansosId != null) {
                 // Get Spinner
                 val incomeSpinner: Spinner = findViewById(R.id.spinner_income)
+                val luasLantaiSpinner: Spinner = findViewById(R.id.spinner_luas_lantai)
                 val kualitasDindingSpinner: Spinner = findViewById(R.id.spinner_kualitas_dinding)
                 val jumlahMakanSpinner: Spinner = findViewById(R.id.spinner_jumlah_makan)
                 val bahanBakarSpinner: Spinner = findViewById(R.id.spinner_bahan_bakar)
@@ -51,6 +52,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
 
                 // Value Array
                 val incomeArray = arrayOf("", "<500 ribu", "500 ribu-1 juta", "1 juta-1.5 juta", ">1.5 juta")
+                val luasLantaiArray = arrayOf("", "Diatas 8m²", "Dibawah 8m²")
                 val kualitasDindingArray = arrayOf("", "Buruk", "Normal", "Bagus")
                 val jumlahMakanArray = arrayOf("", "0", "1", "2", "3")
                 val bahanBakarArray = arrayOf("", "Kayu/Arang", "Gas/LPG")
@@ -61,6 +63,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
 
                 // Adapter
                 val incomeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, incomeArray)
+                val luasLantaiAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, luasLantaiArray)
                 val kualitasDindingAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, kualitasDindingArray)
                 val jumlahMakanAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, jumlahMakanArray)
                 val bahanBakarAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, bahanBakarArray)
@@ -71,6 +74,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
 
                 // Set Dropdown
                 incomeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                luasLantaiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 kualitasDindingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 jumlahMakanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 bahanBakarAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -81,6 +85,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
 
                 // Set Adapter
                 incomeSpinner.adapter = incomeAdapter
+                luasLantaiSpinner.adapter = luasLantaiAdapter
                 kualitasDindingSpinner.adapter = kualitasDindingAdapter
                 jumlahMakanSpinner.adapter = jumlahMakanAdapter
                 bahanBakarSpinner.adapter = bahanBakarAdapter
@@ -101,6 +106,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
                                 findViewById<EditText>(R.id.et_nama).setText(user.name)
                                 findViewById<EditText>(R.id.et_no_kk).setText(user.noKk)
                                 incomeSpinner.setSelection(incomeArray.indexOf(user.income))
+                                luasLantaiSpinner.setSelection(incomeArray.indexOf(user.floorArea))
                                 kualitasDindingSpinner.setSelection(kualitasDindingArray.indexOf(user.wallQuality))
                                 jumlahMakanSpinner.setSelection(jumlahMakanArray.indexOf(user.numberOfMeals))
                                 bahanBakarSpinner.setSelection(bahanBakarArray.indexOf(user.fuel))
@@ -126,6 +132,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
                             findViewById<EditText>(R.id.et_nama).text.toString().trim(),
                             findViewById<EditText>(R.id.et_no_kk).text.toString().trim(),
                             incomeSpinner.selectedItem.toString(),
+                            luasLantaiSpinner.selectedItem.toString(),
                             kualitasDindingSpinner.selectedItem.toString(),
                             jumlahMakanSpinner.selectedItem.toString(),
                             bahanBakarSpinner.selectedItem.toString(),
@@ -149,6 +156,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
         nama: String,
         no_kk: String,
         income: String,
+        floor_area: String,
         wall_quality: String,
         number_of_meals: String,
         fuel: String,
@@ -163,6 +171,7 @@ class PengajuanBansosActivity : AppCompatActivity() {
         request.name = nama
         request.noKk = no_kk
         request.income = income
+        request.floorArea = floor_area
         request.wallQuality = wall_quality
         request.numberOfMeals = number_of_meals
         request.fuel = fuel

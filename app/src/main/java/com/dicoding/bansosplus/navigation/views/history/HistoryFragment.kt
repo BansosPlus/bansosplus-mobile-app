@@ -14,6 +14,7 @@ import com.dicoding.bansosplus.databinding.FragmentBansosBinding
 import com.dicoding.bansosplus.databinding.FragmentHistoryBinding
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import com.dicoding.bansosplus.navigation.views.adapter.HistoryListAdapter
+import com.dicoding.bansosplus.navigation.views.history.detailHistory.DetailHistoryActivity
 import com.dicoding.bansosplus.navigation.views.home.detailBansos.DetailBansosActivity
 
 class HistoryFragment : Fragment() {
@@ -38,7 +39,7 @@ class HistoryFragment : Fragment() {
         binding.listBansosView.layoutManager = LinearLayoutManager(context)
 
         val adapter = HistoryListAdapter(ArrayList(), requireContext()) { selectedItem ->
-            val intent = Intent(requireContext(), DetailBansosActivity::class.java)
+            val intent = Intent(requireContext(), DetailHistoryActivity::class.java)
             intent.putExtra("bansosId", selectedItem.id.toString())
             startActivity(intent)
         }

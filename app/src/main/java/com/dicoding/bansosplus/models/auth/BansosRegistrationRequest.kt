@@ -24,6 +24,10 @@ class BansosRegistrationRequest {
     @Expose
     var income: String? = null
 
+    @SerializedName("floor_area")
+    @Expose
+    var floorArea: String? = null
+
     @SerializedName("wall_quality")
     @Expose
     var wallQuality: String? = null

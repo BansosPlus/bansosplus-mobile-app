@@ -4,6 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".navigation.views.history.feedback.FeedbackActivity">
+    tools:context=".navigation.views.history.detailHistory.feedback.FeedbackActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="42dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="349dp"
+            android:layout_height="match_parent"
+            android:background="@color/light_blue">
+
+            <TextView
+                android:id="@+id/tv_history_pengajuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Ulasan"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    drawable interactive star?-->
+            <ImageView
+                android:id="@+id/iv_star_rate1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="1"
+                android:src="@drawable/ic_star_filled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
+
+            <ImageView
+                android:id="@+id/iv_star_rate2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="2"
+                android:src="@drawable/ic_star_filled"
+                app:layout_constraintStart_toEndOf="@id/iv_star_rate1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
+
+            <ImageView
+                android:id="@+id/iv_star_rate3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="3"
+                android:src="@drawable/ic_star_filled"
+                app:layout_constraintStart_toEndOf="@id/iv_star_rate2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
+
+            <ImageView
+                android:id="@+id/iv_star_rate4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="4"
+                android:src="@drawable/ic_star_filled"
+                app:layout_constraintStart_toEndOf="@id/iv_star_rate3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
+
+            <ImageView
+                android:id="@+id/iv_star_rate5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="5"
+                android:src="@drawable/ic_star_outline"
+                app:layout_constraintStart_toEndOf="@id/iv_star_rate4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_feedback_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/anti_reflect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_star_rate5"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                >
+
+                <EditText
+                    android:id="@+id/et_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:maxLines="5"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textSize="14sp"
+                    android:hint="Feedback"
+                    android:gravity="top|start"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_feedback"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
+                android:text="Kirim Ulasan"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tv_feedback_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
