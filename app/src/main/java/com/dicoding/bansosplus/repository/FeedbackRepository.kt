@@ -2,6 +2,8 @@ package com.dicoding.bansosplus.repository
 
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.api.RetrofitInstance
+import com.dicoding.bansosplus.models.auth.BansosRegistrationResponse
+import com.dicoding.bansosplus.models.auth.FeedbackRequest
 import com.dicoding.bansosplus.models.auth.FeedbackResponse
 import retrofit2.Response
 
@@ -14,6 +16,9 @@ class FeedbackRepository(private val sessionManager: SessionManager) {
         } else {
             throw IllegalStateException("Token is null. Please login.")
         }
+    }
+    suspend fun uploadFeedback(request: FeedbackRequest): Response<FeedbackResponse> {
+        return RetrofitInstance.feedbackApi.uploadFeedback("Bearer " + sessionManager.fetchToken(), request)
     }
 
 }
