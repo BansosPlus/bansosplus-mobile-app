@@ -10,10 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import java.text.SimpleDateFormat
 import java.util.Locale
+
 
 class DiterimaBansosActivity : AppCompatActivity(){
 
@@ -45,6 +48,7 @@ class DiterimaBansosActivity : AppCompatActivity(){
                 if (bansosDetails != null) {
 
                     val bansosImageView: ImageView = findViewById(R.id.bansosImageView)
+                    val bansosQrCodeView: ImageView = findViewById(R.id.bansosQrView)
                     val bansosTitleView: TextView = findViewById(R.id.textViewBansosTitle)
                     val bansosExpiryDateView: TextView = findViewById(R.id.textViewBansosExpiryDate)
                     val bansosDescriptionView: TextView = findViewById(R.id.textViewBansosDescription)
@@ -59,6 +63,18 @@ class DiterimaBansosActivity : AppCompatActivity(){
                     Glide.with(this)
                         .load(bansosDetails.imageUrl)
                         .into(bansosImageView)
+
+                    val qrCodeImageUrl = "http://35.202.238.22:8001/api/qr-codes/show?bansos_registration_id=${bansosDetails.id}"
+                    val glideUrl = GlideUrl(
+                        qrCodeImageUrl, LazyHeaders.Builder()
+                            .addHeader("Authorization", "Bearer ${activitySessionManager.fetchToken()}")
+                            .build()
+                    )
+
+                    Glide.with(this)
+                        .load(glideUrl)
+                        .into(bansosQrCodeView)
+
                 } else {
                     Toast.makeText(this, "Failed to get bansos details", Toast.LENGTH_SHORT).show()
                     finish()
