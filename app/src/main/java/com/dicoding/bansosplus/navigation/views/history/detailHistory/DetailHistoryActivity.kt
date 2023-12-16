@@ -42,14 +42,15 @@ class DetailHistoryActivity : AppCompatActivity() {
             finish()
         }
         val intent = intent
-        if (intent.hasExtra("bansosId")) {
+        if (intent.hasExtra("bansosRegistrationId")) {
+            val bansosRegistrationId = intent.getStringExtra("bansosRegistrationId")
             val bansosId = intent.getStringExtra("bansosId")
 
             viewModel = ViewModelProvider(this, DetailHistoryViewModelFactory(activitySessionManager)).get(
                 DetailHistoryViewModel::class.java)
 
-            if (bansosId != null) {
-                viewModel.get(bansosId)
+            if (bansosRegistrationId != null) {
+                viewModel.get(bansosRegistrationId)
             }
 
             viewModel.bansosItem.observe(this, Observer { bansosDetails ->
@@ -62,7 +63,7 @@ class DetailHistoryActivity : AppCompatActivity() {
                     val bansosDescriptionView: TextView = binding.textViewBansosDescription
 
                     bansosTitleView.text = bansosDetails.name
-                    bansosDetails.expiryDate?.let { value ->
+                    bansosDetails.updatedAt?.let { value ->
                         val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
                         bansosExpiryDateView?.text = formattedDate
                     }

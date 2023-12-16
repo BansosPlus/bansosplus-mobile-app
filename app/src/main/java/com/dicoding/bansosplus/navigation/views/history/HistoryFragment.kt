@@ -40,7 +40,8 @@ class HistoryFragment : Fragment() {
 
         val adapter = HistoryListAdapter(ArrayList(), requireContext()) { selectedItem ->
             val intent = Intent(requireContext(), DetailHistoryActivity::class.java)
-            intent.putExtra("bansosId", selectedItem.id.toString())
+            intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
+            intent.putExtra("bansosId", selectedItem.bansosId.toString())
             startActivity(intent)
         }
 

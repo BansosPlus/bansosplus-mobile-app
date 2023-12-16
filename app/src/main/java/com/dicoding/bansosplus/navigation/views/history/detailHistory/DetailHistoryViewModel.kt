@@ -6,20 +6,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.bansosplus.SessionManager
-import com.dicoding.bansosplus.navigation.data.model.BansosItem
+import com.dicoding.bansosplus.navigation.data.model.AcceptedBansosItem
 import com.dicoding.bansosplus.navigation.data.model.FeedbackItem
-import com.dicoding.bansosplus.repository.BansosRepository
+import com.dicoding.bansosplus.repository.BansosRegistrationRepository
 import com.dicoding.bansosplus.repository.FeedbackRepository
 import kotlinx.coroutines.launch
 
 class DetailHistoryViewModel (
     private val sessionManager: SessionManager,
 ) : ViewModel() {
-    private val bansosRepository: BansosRepository = BansosRepository(sessionManager)
+
+    private val bansosRegistrationRepository: BansosRegistrationRepository = BansosRegistrationRepository(sessionManager)
     private val feedbackRepository: FeedbackRepository = FeedbackRepository(sessionManager)
-    private val _bansosItem = MutableLiveData<BansosItem?>()
+    private val _bansosItem = MutableLiveData<AcceptedBansosItem?>()
     private val _feedbackList = MutableLiveData(ArrayList<FeedbackItem>())
-    val bansosItem: MutableLiveData<BansosItem?>
+    val bansosItem: MutableLiveData<AcceptedBansosItem?>
         get() = _bansosItem
     val feedbackList: LiveData<ArrayList<FeedbackItem>>
         get() = _feedbackList
@@ -27,7 +28,7 @@ class DetailHistoryViewModel (
     fun get(id: String) {
         viewModelScope.launch {
             try {
-                val response = bansosRepository.getDetail(id)
+                val response = bansosRegistrationRepository.getBansosRegistrationDetail(id)
                 if (response.isSuccessful) {
                     val item = response.body()?.data
                     _bansosItem.value = item

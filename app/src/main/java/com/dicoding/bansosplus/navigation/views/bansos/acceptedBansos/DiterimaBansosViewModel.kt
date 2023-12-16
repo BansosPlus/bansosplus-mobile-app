@@ -1,16 +1,12 @@
 package com.dicoding.bansosplus.navigation.views.bansos.acceptedBansos
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.navigation.data.model.AcceptedBansosItem
-import com.dicoding.bansosplus.navigation.data.model.BansosItem
-import com.dicoding.bansosplus.navigation.data.model.FeedbackItem
 import com.dicoding.bansosplus.repository.BansosRegistrationRepository
-import com.dicoding.bansosplus.repository.BansosRepository
 import kotlinx.coroutines.launch
 
 class DiterimaBansosViewModel(
