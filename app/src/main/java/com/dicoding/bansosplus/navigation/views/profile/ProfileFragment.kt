@@ -43,19 +43,14 @@ class ProfileFragment : Fragment() {
 
         sessionManager = SessionManager(requireContext())
 
-        binding.buttonQr.setOnClickListener(){
-            val intent = Intent(requireContext(), ScanQrActivity::class.java)
-            startActivity(intent)
+        if (sessionManager.fetchRole() !== "admin") {
+            binding.buttonQr.visibility = View.GONE
+        } else {
+            binding.buttonQr.setOnClickListener(){
+                val intent = Intent(requireContext(), ScanQrActivity::class.java)
+                startActivity(intent)
+            }
         }
-
-//        if (sessionManager.fetchRole() !== "admin") {
-//            binding.buttonQr.visibility = View.GONE
-//        } else {
-//            binding.buttonQr.setOnClickListener(){
-//                val intent = Intent(requireContext(), ScanQrActivity::class.java)
-//                startActivity(intent)
-//            }
-//        }
 
         viewModel = ViewModelProvider(this, ProfileViewModelFactory(sessionManager)).get(ProfileViewModel::class.java)
 
