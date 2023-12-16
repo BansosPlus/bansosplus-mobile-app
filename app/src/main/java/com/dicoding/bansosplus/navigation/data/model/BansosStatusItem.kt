@@ -7,9 +7,6 @@ data class BansosStatusItem(
     @field:SerializedName("id")
     val id: Int,
 
-    @field:SerializedName("bansosId")
-    val bansosId: Int,
-
     @field:SerializedName("bansos_name")
     val bansosName: String,
 
@@ -24,4 +21,7 @@ data class BansosStatusItem(
 
     @field:SerializedName("image_url")
     val imageUrl: String,
+
+    @field:SerializedName("bansos_id")
+    val bansosId: Int,
     )

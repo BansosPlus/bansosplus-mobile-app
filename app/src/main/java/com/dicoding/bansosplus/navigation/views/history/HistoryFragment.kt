@@ -2,6 +2,7 @@ package com.dicoding.bansosplus.navigation.views.history
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,9 @@ class HistoryFragment : Fragment() {
         binding.listBansosView.layoutManager = LinearLayoutManager(context)
 
         val adapter = HistoryListAdapter(ArrayList(), requireContext()) { selectedItem ->
+
+            Log.d("FEEDBACK PAGE", "bansos id : ${selectedItem.bansosId}")
+            Log.d("FEEDBACK PAGE", "bansos regis id : ${selectedItem.id}")
             val intent = Intent(requireContext(), DetailHistoryActivity::class.java)
             intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
             intent.putExtra("bansosId", selectedItem.bansosId.toString())
