@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.FragmentProfileBinding
 import com.dicoding.bansosplus.models.auth.UserRequest
-import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.views.scanQr.ScanQrActivity
 import com.dicoding.bansosplus.repository.UserRepository
 import kotlinx.coroutines.launch
@@ -47,7 +46,7 @@ class ProfileFragment : Fragment() {
 
         sessionManager = SessionManager(requireContext())
 
-        if (sessionManager.fetchRole() !== "admin") {
+        if (sessionManager.fetchRole() != "admin") {
             binding.buttonQr.visibility = View.GONE
         } else {
             binding.buttonQr.setOnClickListener(){

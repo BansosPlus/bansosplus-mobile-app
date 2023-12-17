@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.R
+import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -29,6 +30,7 @@ class HistoryListAdapter(
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
         private var datePlaceholderView: TextView? = null
+        private lateinit var sessionManager: SessionManager
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
@@ -39,8 +41,16 @@ class HistoryListAdapter(
             datePlaceholderView = view.findViewById(R.id.expiryDate)
         }
 
-        fun bind(data: BansosStatusItem) {
-            bansosNameTextView?.text = data.bansosName
+        fun bind(data: BansosStatusItem, context: Context) {
+
+            sessionManager = SessionManager(context)
+
+            if (sessionManager.fetchRole() == "admin") {
+                bansosNameTextView?.text = data.userName
+            } else {
+                bansosNameTextView?.text = data.bansosName
+            }
+
             val cekStatus = data.status
             Log.d("cek status", cekStatus)
             if(cekStatus == "REJECTED"){
@@ -81,7 +91,7 @@ class HistoryListAdapter(
     }
 
     override fun onBindViewHolder(holder: HistoryHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position], context)
     }
 
     override fun getItemCount(): Int {

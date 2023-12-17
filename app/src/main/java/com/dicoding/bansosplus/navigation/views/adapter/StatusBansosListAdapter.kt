@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.R
+import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.navigation.data.model.BansosStatusItem
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -27,6 +29,7 @@ class StatusBansosListAdapter(
         private var bansosStatusImageView: ImageView? = null
         private var bansosExpiryDateView: TextView? = null
         private var bansosImageUrl: ImageView? = null
+        private lateinit var sessionManager: SessionManager
 
         init {
             bansosNameTextView = view.findViewById(R.id.bansosName)
@@ -37,8 +40,16 @@ class StatusBansosListAdapter(
             bansosImageUrl = view.findViewById(R.id.bansosImage)
         }
 
-        fun bind(data: BansosStatusItem) {
-            bansosNameTextView?.text = data.bansosName
+        fun bind(data: BansosStatusItem, context: Context) {
+
+            sessionManager = SessionManager(context)
+
+            if (sessionManager.fetchRole() == "admin") {
+                bansosNameTextView?.text = data.userName
+            } else {
+                bansosNameTextView?.text = data.bansosName
+            }
+
             val cekStatus = data.status
             Log.d("cek status", cekStatus)
             if(cekStatus == "ACCEPTED"){
@@ -81,7 +92,7 @@ class StatusBansosListAdapter(
     }
 
     override fun onBindViewHolder(holder: StatusBansosHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position], context)
     }
 
     override fun getItemCount(): Int {

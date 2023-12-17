@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.dicoding.bansosplus.navigation.views.home.HomeFragment">
 
-    <!--    cardview isi data diri, dissapear kalo udh diisi-->
-
     <TextView
         android:id="@+id/tv_home_greet"
         android:layout_width="wrap_content"

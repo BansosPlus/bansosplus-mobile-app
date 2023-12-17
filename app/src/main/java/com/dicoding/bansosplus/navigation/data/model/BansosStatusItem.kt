@@ -24,4 +24,7 @@ data class BansosStatusItem(
 
     @field:SerializedName("bansos_id")
     val bansosId: Int,
+
+    @field:SerializedName("user_name")
+    val userName: String,
     )
