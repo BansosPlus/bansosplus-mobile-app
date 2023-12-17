@@ -49,6 +49,25 @@ class ProfileFragment : Fragment() {
         if (sessionManager.fetchRole() != "admin") {
             binding.buttonQr.visibility = View.GONE
         } else {
+            binding.tvIncome.visibility = View.GONE
+            binding.tvLuasLantai.visibility = View.GONE
+            binding.tvKualitasDinding.visibility = View.GONE
+            binding.tvJumlahMakan.visibility = View.GONE
+            binding.tvBahanBakar.visibility = View.GONE
+            binding.tvPendidikan.visibility = View.GONE
+            binding.tvAset.visibility = View.GONE
+            binding.tvBerobat.visibility = View.GONE
+            binding.tvTanggungan.visibility = View.GONE
+            binding.cardIncome.visibility = View.GONE
+            binding.cardLuasLantai.visibility = View.GONE
+            binding.cardKualitasDinding.visibility = View.GONE
+            binding.cardJumlahMakan.visibility = View.GONE
+            binding.cardBahanBakar.visibility = View.GONE
+            binding.cardPendidikan.visibility = View.GONE
+            binding.cardAset.visibility = View.GONE
+            binding.cardBerobat.visibility = View.GONE
+            binding.cardTanggungan.visibility = View.GONE
+
             binding.buttonQr.setOnClickListener(){
                 val intent = Intent(requireContext(), ScanQrActivity::class.java)
                 startActivity(intent)
