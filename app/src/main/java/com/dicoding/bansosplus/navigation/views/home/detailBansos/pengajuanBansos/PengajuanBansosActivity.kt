@@ -3,13 +3,16 @@ package com.dicoding.bansosplus.navigation.views.home.detailBansos.pengajuanBans
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
@@ -27,6 +30,27 @@ class PengajuanBansosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pengajuan_bansos)
 
         activitySessionManager = SessionManager(this)
+
+        if (activitySessionManager.fetchRole() == "admin") {
+            findViewById<TextView>(R.id.tv_income).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_luas_lantai).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_kualitas_dinding).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_jumlah_makan).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_bahan_bakar).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_pendidikan).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_aset).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_berobat).visibility = View.GONE
+            findViewById<TextView>(R.id.tv_tanggungan).visibility = View.GONE
+            findViewById<CardView>(R.id.card_income).visibility = View.GONE
+            findViewById<CardView>(R.id.card_luas_lantai).visibility = View.GONE
+            findViewById<CardView>(R.id.card_kualitas_dinding).visibility = View.GONE
+            findViewById<CardView>(R.id.card_jumlah_makan).visibility = View.GONE
+            findViewById<CardView>(R.id.card_bahan_bakar).visibility = View.GONE
+            findViewById<CardView>(R.id.card_pendidikan).visibility = View.GONE
+            findViewById<CardView>(R.id.card_aset).visibility = View.GONE
+            findViewById<CardView>(R.id.card_berobat).visibility = View.GONE
+            findViewById<CardView>(R.id.card_tanggungan).visibility = View.GONE
+        }
 
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {

@@ -321,7 +321,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!--    jumalh makan-->
+            <!--    jumlah makan-->
             <TextView
                 android:id="@+id/tv_jumlah_makan"
                 android:layout_width="wrap_content"

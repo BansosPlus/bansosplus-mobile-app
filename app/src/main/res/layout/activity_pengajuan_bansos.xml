@@ -183,6 +183,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_nokk_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_income"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -236,6 +237,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_income_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_luas_lantai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -289,6 +291,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_luas_lantai_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_kualitas_dinding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -328,8 +331,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!--    jumalh makan-->
-
+            <!--    jumlah makan-->
             <TextView
                 android:id="@+id/tv_jumlah_makan"
                 android:layout_width="wrap_content"
@@ -343,6 +345,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_kualitas_dinding_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_jumlah_makan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -395,6 +398,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_makan_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_bahan_bakar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -447,6 +451,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_bahan_bakar_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_pendidikan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -499,6 +504,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_pendidikan_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_aset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -551,6 +557,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_aset_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_berobat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -603,6 +610,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_berobat_layout" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_tanggungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
