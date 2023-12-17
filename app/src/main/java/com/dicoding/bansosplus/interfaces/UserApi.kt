@@ -1,8 +1,10 @@
 package com.dicoding.bansosplus.interfaces
 
+import com.dicoding.bansosplus.models.auth.UserRequest
 import com.dicoding.bansosplus.models.auth.UserResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Multipart
@@ -15,8 +17,14 @@ interface UserApi {
 
     @Multipart
     @PUT("api/users")
-    suspend fun update(
+    suspend fun updateImage(
         @Header("Authorization") token: String,
         @Part file: MultipartBody.Part
+    ): Response<UserResponse>
+
+    @PUT("api/users")
+    suspend fun update(
+        @Header("Authorization") token: String,
+        @Body request: UserRequest
     ): Response<UserResponse>
 }

@@ -18,6 +18,8 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.databinding.FragmentProfileBinding
+import com.dicoding.bansosplus.models.auth.UserRequest
+import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.views.scanQr.ScanQrActivity
 import com.dicoding.bansosplus.repository.UserRepository
 import kotlinx.coroutines.launch
@@ -140,6 +142,25 @@ class ProfileFragment : Fragment() {
             ivProfileUser.setOnClickListener {
                 openImageGallery()
             }
+
+            btnUpdateProfile.setOnClickListener {
+                lifecycleScope.launch() {
+                    updateProfile(
+                        etNik.text.toString().trim(),
+                        etNama.text.toString().trim(),
+                        etNoKk.text.toString().trim(),
+                        incomeSpinner.selectedItem.toString(),
+                        luasLantaiSpinner.selectedItem.toString(),
+                        kualitasDindingSpinner.selectedItem.toString(),
+                        jumlahMakanSpinner.selectedItem.toString(),
+                        bahanBakarSpinner.selectedItem.toString(),
+                        pendidikanSpinner.selectedItem.toString(),
+                        asetSpinner.selectedItem.toString(),
+                        berobatSpinner.selectedItem.toString(),
+                        tanggunganSpinner.selectedItem.toString()
+                    )
+                }
+            }
         }
 
         return root
@@ -148,6 +169,46 @@ class ProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private suspend fun updateProfile(
+        nik: String,
+        nama: String,
+        no_kk: String,
+        income: String,
+        floor_area: String,
+        wall_quality: String,
+        number_of_meals: String,
+        fuel: String,
+        education: String,
+        total_asset: String,
+        treatment: String,
+        number_of_dependents: String
+    ) {
+        val request = UserRequest()
+        request.nik = nik
+        request.name = nama
+        request.noKk = no_kk
+        request.income = income
+        request.floorArea = floor_area
+        request.wallQuality = wall_quality
+        request.numberOfMeals = number_of_meals
+        request.fuel = fuel
+        request.education = education
+        request.totalAsset = total_asset
+        request.treatment = treatment
+        request.numberOfDependents = number_of_dependents
+
+        try {
+            val response = UserRepository(sessionManager).update(request)
+            if (response.isSuccessful) {
+                Log.i("BANSOS", "Update user successfully")
+            } else {
+                Log.e("BANSOS", "Response failed")
+            }
+        } catch (e: Exception) {
+            Log.e("BANSOS", "Connection failed")
+        }
     }
 
     private fun openImageGallery() {
@@ -175,7 +236,7 @@ class ProfileFragment : Fragment() {
                 val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
                 val multipartBody = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
-                val response = UserRepository(sessionManager).update(multipartBody)
+                val response = UserRepository(sessionManager).updateImage(multipartBody)
                 if (response.isSuccessful) {
                     Log.i("BANSOS", "Update user successfully")
                     viewModel.getUserData()
