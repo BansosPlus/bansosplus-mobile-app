@@ -56,8 +56,6 @@ class ProfileFragment : Fragment() {
             }
         }
 
-
-
         viewModel = ViewModelProvider(this, ProfileViewModelFactory(sessionManager)).get(ProfileViewModel::class.java)
 
         binding.apply {

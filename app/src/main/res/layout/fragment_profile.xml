@@ -17,25 +17,17 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top" />
-    <ImageView
-        android:id="@+id/iv_settings"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/ic_settings"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile"/>
 
     <ImageView
         android:id="@+id/iv_profile_user"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="88dp"
         android:src="@drawable/img_profile_blank"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_settings"/>
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedView"
@@ -645,6 +637,7 @@
                 android:layout_height="54dp"
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="100dp"
                 android:backgroundTint="@color/blue"
                 android:text="Update Profile"
@@ -655,25 +648,6 @@
                 app:layout_constraintHorizontal_bias="0.873"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btn_keluar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="100dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/dark_red"
-                android:paddingHorizontal="32dp"
-                android:paddingVertical="4dp"
-                android:text="KELUAR"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -720,5 +694,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logout"
+        app:layout_constraintBottom_toTopOf="@+id/iv_profile_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toEndOf="@+id/tv_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
