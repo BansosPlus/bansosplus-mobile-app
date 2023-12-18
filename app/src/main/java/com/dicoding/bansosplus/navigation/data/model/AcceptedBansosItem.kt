@@ -27,4 +27,7 @@ data class AcceptedBansosItem(
 
     @field:SerializedName("status")
     val status: String,
+
+    @field:SerializedName("point")
+    val point: Float,
     )

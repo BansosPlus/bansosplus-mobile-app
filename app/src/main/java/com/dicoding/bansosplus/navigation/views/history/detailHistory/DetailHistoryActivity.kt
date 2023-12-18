@@ -3,6 +3,7 @@ package com.dicoding.bansosplus.navigation.views.history.detailHistory
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -45,6 +46,7 @@ class DetailHistoryActivity : AppCompatActivity() {
         if (intent.hasExtra("bansosRegistrationId")) {
             val bansosRegistrationId = intent.getStringExtra("bansosRegistrationId")
             val bansosId = intent.getStringExtra("bansosId")
+            val regisStatus = intent.getStringExtra("regisStatus")
 
             viewModel = ViewModelProvider(this, DetailHistoryViewModelFactory(activitySessionManager)).get(
                 DetailHistoryViewModel::class.java)
@@ -63,6 +65,14 @@ class DetailHistoryActivity : AppCompatActivity() {
                     val bansosDescriptionView: TextView = binding.textViewBansosDescription
 
                     bansosTitleView.text = bansosDetails.name
+
+                    if (regisStatus == "REJECTED") {
+                        binding.textView2.text = "Ditolak pada          :"
+                        binding.textView4.text = "Mohon maaf pengajuan Anda ditolak!"
+                        binding.regisScore.text = (bansosDetails.point * 100).toString()
+                        binding.textView5.text = "Batas nilai penerimaan adalah 75"
+                    }
+
                     bansosDetails.updatedAt?.let { value ->
                         val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
                         bansosExpiryDateView?.text = formattedDate
@@ -79,12 +89,17 @@ class DetailHistoryActivity : AppCompatActivity() {
                 }
             })
 
-            val toFeedbackBtn: Button = binding.btnToFeedback
-            toFeedbackBtn.setOnClickListener {
-                val intent = Intent(this, FeedbackActivity::class.java)
-                intent.putExtra("bansosId", bansosId)
-                startActivity(intent)
+            if (regisStatus == "REJECTED") {
+                binding.constraintLayout.visibility = View.GONE
+            } else {
+                val toFeedbackBtn: Button = binding.btnToFeedback
+                toFeedbackBtn.setOnClickListener {
+                    val intent = Intent(this, FeedbackActivity::class.java)
+                    intent.putExtra("bansosId", bansosId)
+                    startActivity(intent)
+                }
             }
+
         } else {
             Toast.makeText(this, "No bansosId found in the intent", Toast.LENGTH_SHORT).show()
             finish()

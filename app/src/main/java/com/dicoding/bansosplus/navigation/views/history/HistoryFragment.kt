@@ -44,6 +44,7 @@ class HistoryFragment : Fragment() {
             val intent = Intent(requireContext(), DetailHistoryActivity::class.java)
             intent.putExtra("bansosRegistrationId", selectedItem.id.toString())
             intent.putExtra("bansosId", selectedItem.bansosId.toString())
+            intent.putExtra("regisStatus", selectedItem.status)
             startActivity(intent)
         }
 

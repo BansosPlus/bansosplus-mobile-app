@@ -17,10 +17,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.WelcomeActivity
 import com.dicoding.bansosplus.databinding.FragmentProfileBinding
 import com.dicoding.bansosplus.models.auth.UserRequest
+import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.views.scanQr.ScanQrActivity
 import com.dicoding.bansosplus.repository.UserRepository
+import com.dicoding.bansosplus.ui.login.LoginActivity
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -45,6 +48,11 @@ class ProfileFragment : Fragment() {
         val root : View = binding.root
 
         sessionManager = SessionManager(requireContext())
+
+        binding.imageButton.setOnClickListener {
+            val intent = Intent(requireContext(), WelcomeActivity::class.java)
+            startActivity(intent)
+        }
 
         if (sessionManager.fetchRole() != "admin") {
             binding.buttonQr.visibility = View.GONE
