@@ -23,7 +23,6 @@ import java.util.TimerTask
 import androidx.lifecycle.Observer
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.navigation.BottomNavActivity
-import com.dicoding.bansosplus.navigation.views.profile.ProfileFragment
 import java.text.SimpleDateFormat
 import java.util.Locale
 

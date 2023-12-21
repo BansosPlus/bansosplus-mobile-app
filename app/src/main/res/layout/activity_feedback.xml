@@ -54,7 +54,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:contentDescription="1"
-                android:src="@drawable/ic_star_filled"
+                android:src="@drawable/ic_star_outline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
 
@@ -65,7 +65,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:contentDescription="2"
-                android:src="@drawable/ic_star_filled"
+                android:src="@drawable/ic_star_outline"
                 app:layout_constraintStart_toEndOf="@id/iv_star_rate1"
                 app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
 
@@ -76,7 +76,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:contentDescription="3"
-                android:src="@drawable/ic_star_filled"
+                android:src="@drawable/ic_star_outline"
                 app:layout_constraintStart_toEndOf="@id/iv_star_rate2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
 
@@ -87,7 +87,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:contentDescription="4"
-                android:src="@drawable/ic_star_filled"
+                android:src="@drawable/ic_star_outline"
                 app:layout_constraintStart_toEndOf="@id/iv_star_rate3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_history_pengajuan" />
 
@@ -123,7 +123,6 @@
                     android:layout_height="150dp"
                     android:maxLines="5"
                     android:inputType="text"
-                    android:paddingVertical="16dp"
                     android:textSize="14sp"
                     android:hint="Feedback"
                     android:gravity="top|start"

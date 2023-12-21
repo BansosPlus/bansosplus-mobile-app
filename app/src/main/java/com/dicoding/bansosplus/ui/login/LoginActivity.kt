@@ -3,7 +3,10 @@ package com.dicoding.bansosplus.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
+import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.WelcomeActivity
 import com.dicoding.bansosplus.databinding.ActivityLoginBinding
@@ -52,11 +55,21 @@ class LoginActivity : AppCompatActivity() {
                 user?.token?.let { sessionManager.saveToken(it) }
                 user?.role?.let { sessionManager.saveRole(it) }
 
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.login_success),
+                    Toast.LENGTH_SHORT
+                ).show()
+
                 val intent = Intent(this@LoginActivity, BottomNavActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                //
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.login_failed),
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 

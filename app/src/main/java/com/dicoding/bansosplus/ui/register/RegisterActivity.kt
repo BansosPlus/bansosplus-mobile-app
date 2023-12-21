@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
 import com.dicoding.bansosplus.WelcomeActivity
 import com.dicoding.bansosplus.databinding.ActivityRegisterBinding
@@ -12,6 +14,7 @@ import com.dicoding.bansosplus.models.auth.RegisterRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.repository.AuthRepository
 import com.dicoding.bansosplus.ui.login.LoginActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
@@ -80,14 +83,31 @@ class RegisterActivity : AppCompatActivity() {
                     sessionManager.saveName(it)
                 }
 
-                val intent = Intent(this@RegisterActivity, BottomNavActivity::class.java)
-                startActivity(intent)
-                finish()
+                MaterialAlertDialogBuilder(this@RegisterActivity)
+                    .setTitle(getString(R.string.register_success))
+                    .setMessage("Silahkan login kembali.")
+                    .setPositiveButton("Masuk"){
+                            dialog, _ -> dialog.dismiss()
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }.create().show()
+
             } else {
                 // TODO: Alert
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.register_failed_response),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         } else {
             // TODO: Alert
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.register_failed_pass_not_match),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.databinding.ActivityDetailBansosBinding
 import com.dicoding.bansosplus.navigation.data.model.FeedbackItem
 import com.dicoding.bansosplus.navigation.views.adapter.FeedbackListAdapter
 import com.dicoding.bansosplus.navigation.views.home.detailBansos.pengajuanBansos.PengajuanBansosActivity
@@ -24,15 +25,17 @@ import java.util.Locale
 
 class DetailBansosActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityDetailBansosBinding
     private lateinit var activitySessionManager: SessionManager
     private lateinit var viewModel: DetailBansosViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_bansos)
+        binding = ActivityDetailBansosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         activitySessionManager = SessionManager(this)
 
-        val backButton: ImageButton = findViewById(R.id.backButton)
+        val backButton: ImageButton = binding.backButton
         backButton.setOnClickListener {
             finish()
         }
@@ -50,16 +53,16 @@ class DetailBansosActivity : AppCompatActivity() {
 
                 if (bansosDetails != null) {
 
-                    val bansosImageView: ImageView = findViewById(R.id.bansosImageView)
-                    val bansosTitleView: TextView = findViewById(R.id.textViewBansosTitle)
-                    val bansosExpiryDateView: TextView = findViewById(R.id.textViewBansosExpiryDate)
-                    val bansosDescriptionView: TextView = findViewById(R.id.textViewBansosDescription)
-                    val bansosFeedbackListView: RecyclerView = findViewById(R.id.listFeedbackView)
+                    val bansosImageView: ImageView = binding.bansosImageView
+                    val bansosTitleView: TextView = binding.textViewBansosTitle
+                    val bansosExpiryDateView: TextView = binding.textViewBansosExpiryDate
+                    val bansosDescriptionView: TextView = binding.textViewBansosDescription
+                    val bansosFeedbackListView: RecyclerView = binding.listFeedbackView
 
                     bansosTitleView.text = bansosDetails.name
-                    bansosDetails.expiryDate?.let { value ->
+                    bansosDetails.expiryDate.let { value ->
                         val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value)
-                        bansosExpiryDateView?.text = formattedDate
+                        bansosExpiryDateView.text = formattedDate
                     }
                     bansosDescriptionView.text = bansosDetails.description
                     Glide.with(this)
@@ -84,19 +87,19 @@ class DetailBansosActivity : AppCompatActivity() {
                     viewModel.getFeedback(bansosDetails.id)
 
                 } else {
-                    Toast.makeText(this, "Failed to get bansos details", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.failed_get_detail), Toast.LENGTH_SHORT).show()
                     finish()
                 }
             })
 
-            val daftarButton: Button = findViewById(R.id.daftarButton)
+            val daftarButton: Button = binding.daftarButton
             daftarButton.setOnClickListener {
                 val intent = Intent(this, PengajuanBansosActivity::class.java)
                 intent.putExtra("bansosId", bansosId)
                 startActivity(intent)
             }
         } else {
-            Toast.makeText(this, "No bansosId found in the intent", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.no_bansos_id), Toast.LENGTH_SHORT).show()
             finish()
         }
     }

@@ -18,7 +18,24 @@
     <string name="alert_invalid_phone">Nomor HP ini invalid!</string>
     <string name="alert_invalid_kk">Nomor KK ini invalid!</string>
     <string name="alert_invalid_nik">NIK ini invalid!</string>
+    <string name="alert_password_less">Minimal 8 karakter!</string>
     <string name="email_anda">Email Anda</string>
     <string name="kata_sandi">Kata Sandi</string>
+    <string name="failed_get_detail">Failed to get bansos details</string>
+    <string name="no_bansos_id">No bansosId found in the intent</string>
+    <string name="login_success">Login Sukses</string>
+    <string name="login_failed">Login Gagal</string>
+    <string name="register_success">Berhasil Registrasi Akun</string>
+    <string name="register_failed_response">Registrasi Akun Gagal</string>
+    <string name="register_failed_pass_not_match">Password tidak sesuai</string>
+
+<!--    <string-array name="income_array">-->
+<!--        <item> </item>-->
+<!--        <item>&lt;500 ribu</item>-->
+<!--        <item>500 ribu-1 juta</item>-->
+<!--        <item>1 juta-1.5 juta</item>-->
+<!--        <item>&gt;1.5 juta</item>-->
+<!--    </string-array>-->
+
 
 </resources>

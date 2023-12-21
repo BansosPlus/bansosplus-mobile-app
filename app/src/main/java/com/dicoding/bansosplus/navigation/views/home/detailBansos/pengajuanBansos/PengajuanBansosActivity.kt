@@ -16,6 +16,7 @@ import androidx.cardview.widget.CardView
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.bansosplus.R
 import com.dicoding.bansosplus.SessionManager
+import com.dicoding.bansosplus.databinding.ActivityPengajuanBansosBinding
 import com.dicoding.bansosplus.models.auth.BansosRegistrationRequest
 import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.repository.BansosRegistrationRepository
@@ -24,53 +25,60 @@ import kotlinx.coroutines.launch
 
 class PengajuanBansosActivity : AppCompatActivity() {
     private lateinit var activitySessionManager: SessionManager
-//    private lateinit var userPreferences: UserPreferences
+    private lateinit var binding: ActivityPengajuanBansosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pengajuan_bansos)
+        binding = ActivityPengajuanBansosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         activitySessionManager = SessionManager(this)
 
-        if (activitySessionManager.fetchRole() == "admin") {
-            findViewById<TextView>(R.id.tv_income).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_luas_lantai).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_kualitas_dinding).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_jumlah_makan).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_bahan_bakar).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_pendidikan).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_aset).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_berobat).visibility = View.GONE
-            findViewById<TextView>(R.id.tv_tanggungan).visibility = View.GONE
-            findViewById<CardView>(R.id.card_income).visibility = View.GONE
-            findViewById<CardView>(R.id.card_luas_lantai).visibility = View.GONE
-            findViewById<CardView>(R.id.card_kualitas_dinding).visibility = View.GONE
-            findViewById<CardView>(R.id.card_jumlah_makan).visibility = View.GONE
-            findViewById<CardView>(R.id.card_bahan_bakar).visibility = View.GONE
-            findViewById<CardView>(R.id.card_pendidikan).visibility = View.GONE
-            findViewById<CardView>(R.id.card_aset).visibility = View.GONE
-            findViewById<CardView>(R.id.card_berobat).visibility = View.GONE
-            findViewById<CardView>(R.id.card_tanggungan).visibility = View.GONE
+        binding.apply {
+            if (activitySessionManager.fetchRole() == "admin") {
+                tvIncome.visibility = View.GONE
+                tvLuasLantai.visibility = View.GONE
+                tvKualitasDinding.visibility = View.GONE
+                tvJumlahMakan.visibility = View.GONE
+                tvBahanBakar.visibility = View.GONE
+                tvPendidikan.visibility = View.GONE
+                tvAset.visibility = View.GONE
+                tvBerobat.visibility = View.GONE
+                tvTanggungan.visibility = View.GONE
+                cardIncome.visibility = View.GONE
+                cardLuasLantai.visibility = View.GONE
+                cardKualitasDinding.visibility = View.GONE
+                cardJumlahMakan.visibility = View.GONE
+                cardBahanBakar.visibility = View.GONE
+                cardPendidikan.visibility = View.GONE
+                cardAset.visibility = View.GONE
+                cardBerobat.visibility = View.GONE
+                cardTanggungan.visibility = View.GONE
+            }
+
+            val backButton: ImageButton = backButton
+            backButton.setOnClickListener {
+                finish()
+            }
+
         }
 
-        val backButton: ImageButton = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            finish()
-        }
+
+
         val intent = intent
         if (intent.hasExtra("bansosId")) {
             val bansosId = intent.getStringExtra("bansosId")
 
             if (bansosId != null) {
                 // Get Spinner
-                val incomeSpinner: Spinner = findViewById(R.id.spinner_income)
-                val luasLantaiSpinner: Spinner = findViewById(R.id.spinner_luas_lantai)
-                val kualitasDindingSpinner: Spinner = findViewById(R.id.spinner_kualitas_dinding)
-                val jumlahMakanSpinner: Spinner = findViewById(R.id.spinner_jumlah_makan)
-                val bahanBakarSpinner: Spinner = findViewById(R.id.spinner_bahan_bakar)
-                val pendidikanSpinner: Spinner = findViewById(R.id.spinner_pendidikan)
-                val asetSpinner: Spinner = findViewById(R.id.spinner_aset)
-                val berobatSpinner: Spinner = findViewById(R.id.spinner_berobat)
-                val tanggunganSpinner: Spinner = findViewById(R.id.spinner_tanggungan)
+                val incomeSpinner: Spinner = binding.spinnerIncome
+                val luasLantaiSpinner: Spinner = binding.spinnerLuasLantai
+                val kualitasDindingSpinner: Spinner = binding.spinnerKualitasDinding
+                val jumlahMakanSpinner: Spinner = binding.spinnerJumlahMakan
+                val bahanBakarSpinner: Spinner = binding.spinnerBahanBakar
+                val pendidikanSpinner: Spinner = binding.spinnerPendidikan
+                val asetSpinner: Spinner = binding.spinnerAset
+                val berobatSpinner: Spinner = binding.spinnerBerobat
+                val tanggunganSpinner: Spinner = binding.spinnerTanggungan
 
                 // Value Array
                 val incomeArray = arrayOf("", "<500 ribu", "500 ribu-1 juta", "1 juta-1.5 juta", ">1.5 juta")
@@ -124,9 +132,9 @@ class PengajuanBansosActivity : AppCompatActivity() {
                             Log.i("BANSOS", "Get user successfully")
 
                             if (user != null) {
-                                findViewById<EditText>(R.id.et_nik).setText(user.nik)
-                                findViewById<EditText>(R.id.et_nama).setText(user.name)
-                                findViewById<EditText>(R.id.et_no_kk).setText(user.noKk)
+                                binding.etNik.setText(user.nik)
+                                binding.etNama.setText(user.name)
+                                binding.etNoKk.setText(user.noKk)
                                 incomeSpinner.setSelection(incomeArray.indexOf(user.income))
                                 luasLantaiSpinner.setSelection(incomeArray.indexOf(user.floorArea))
                                 kualitasDindingSpinner.setSelection(kualitasDindingArray.indexOf(user.wallQuality))
@@ -145,14 +153,14 @@ class PengajuanBansosActivity : AppCompatActivity() {
                     }
                 }
 
-                val btnAjukanBantuan: Button = findViewById(R.id.btn_ajukan_bantuan)
+                val btnAjukanBantuan: Button = binding.btnAjukanBantuan
                 btnAjukanBantuan.setOnClickListener {
                     lifecycleScope.launch() {
                         registerBansos(
                             bansosId.toInt(),
-                            findViewById<EditText>(R.id.et_nik).text.toString().trim(),
-                            findViewById<EditText>(R.id.et_nama).text.toString().trim(),
-                            findViewById<EditText>(R.id.et_no_kk).text.toString().trim(),
+                            binding.etNik.text.toString().trim(),
+                            binding.etNama.text.toString().trim(),
+                            binding.etNoKk.text.toString().trim(),
                             incomeSpinner.selectedItem.toString(),
                             luasLantaiSpinner.selectedItem.toString(),
                             kualitasDindingSpinner.selectedItem.toString(),

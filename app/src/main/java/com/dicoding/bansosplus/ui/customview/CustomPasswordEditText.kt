@@ -29,8 +29,7 @@ class CustomPasswordEditText: TextInputEditText {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-//                sementara belum dipanggil krn password masih bebas
-//                error = if (p0!!.isNotEmpty() && p0.toString().length < 8) context.getString(R.string.alert_password_less) else null
+                error = if (p0!!.isNotEmpty() && p0.toString().length < 8) context.getString(R.string.alert_password_less) else null
             }
 
         })
