@@ -53,7 +53,7 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="100dp"
-                android:text="Validasi Bantuan"
+                android:text="@string/validasi_bantuan"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="NIK"
+                android:text="@string/nik"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Nama Lengkap"
+                android:text="@string/nama_lengkap"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Nomor Kartu Keluarga"
+                android:text="@string/no_kk"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Penghasilan per Tahun"
+                android:text="@string/penghasilan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -176,7 +176,7 @@
                 android:id="@+id/card_income"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -220,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Luas Lantai"
+                android:text="@string/luas_lantai"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -230,7 +230,7 @@
                 android:id="@+id/card_luas_lantai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -274,7 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Kualitas Dinding"
+                android:text="@string/kualitas_dinding"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -284,7 +284,7 @@
                 android:id="@+id/card_kualitas_dinding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -328,7 +328,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Jumlah Makan dalam Sehari"
+                android:text="@string/jumlah_makan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -338,7 +338,7 @@
                 android:id="@+id/card_jumlah_makan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -381,7 +381,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Bahan Bakar di Rumah"
+                android:text="@string/bahan_bakar"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -391,7 +391,7 @@
                 android:id="@+id/card_bahan_bakar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -434,7 +434,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Pendidikan Terakhir"
+                android:text="@string/pendidikan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -444,7 +444,7 @@
                 android:id="@+id/card_pendidikan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -487,7 +487,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Jumlah Aset"
+                android:text="@string/aset"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -497,7 +497,7 @@
                 android:id="@+id/card_aset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -540,7 +540,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Kemampuan Berobat"
+                android:text="@string/kemampuan_berobat"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -550,7 +550,7 @@
                 android:id="@+id/card_berobat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -593,7 +593,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Jumlah Tanggungan"
+                android:text="@string/tanggungan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/vert_guideline_start"
@@ -603,7 +603,7 @@
                 android:id="@+id/card_tanggungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -648,7 +648,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginEnd="100dp"
                 android:backgroundTint="@color/blue"
-                android:text="Update Profile"
+                android:text="@string/update_profile"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Cek status pengajuan bantuan"
+        android:text="@string/cek_status_pengajuan_bantuan"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

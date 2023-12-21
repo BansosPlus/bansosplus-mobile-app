@@ -13,7 +13,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Halo,"
+        android:text="@string/halo"
         android:textSize="22sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Pak RT !"
+        android:text="@string/user"
         android:textSize="22sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -34,37 +34,12 @@
         app:layout_constraintStart_toEndOf="@+id/tv_home_greet"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/cv_lengkap_Data"-->
-<!--        android:layout_width="345dp"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:layout_marginTop="56dp"-->
-<!--        app:cardBackgroundColor="@color/light_blue"-->
-<!--        app:cardCornerRadius="16dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.545"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_top"-->
-<!--        app:layout_constraintVertical_bias="0.024">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView2"-->
-<!--            android:layout_width="334dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Segera lengkapi data diri Anda!"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="16sp" />-->
-<!--    </androidx.cardview.widget.CardView>-->
-
     <TextView
         android:id="@+id/tv_home_listbansos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="List Bansos"
+        android:text="@string/list_bansos"
         android:textSize="22sp"
         android:textColor="@color/black"
         android:textStyle="bold"

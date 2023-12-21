@@ -69,8 +69,9 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="135dp"
-                    android:layout_height="35dp"
-                    android:text="Jenis Bantuan        :"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jenis_bantuan"
+                    android:maxLines="5"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -82,8 +83,8 @@
                 <TextView
                     android:id="@+id/textViewBansosType"
                     android:layout_width="137dp"
-                    android:layout_height="35dp"
-                    android:text="Kebutuhan Pokok"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kebutuhan_pokok"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -105,8 +106,9 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="135dp"
-                    android:layout_height="35dp"
-                    android:text="Diterima pada        :"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="@string/diterima_pada"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -118,7 +120,7 @@
                 <TextView
                     android:id="@+id/textViewBansosExpiryDate"
                     android:layout_width="137dp"
-                    android:layout_height="35dp"
+                    android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/black"
                     android:textSize="15sp"
@@ -134,8 +136,8 @@
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Deskripsi Bantuan"
+                android:layout_height="wrap_content"
+                android:text="@string/deskripsi_bantuan"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -143,7 +145,9 @@
             <TextView
                 android:id="@+id/textViewBansosDescription"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
                 android:text=""
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -151,8 +155,10 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Kode QR"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/kode_qr"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />

@@ -8,9 +8,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="347dp"
         android:layout_height="124dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="4dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="48dp"
                 android:padding="5dp"
-                android:text="Bantuan Makanan Pokok"
+                android:text="@string/bantuan_makanan_pokok"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="52dp"
                 android:padding="5dp"
-                android:text="Tanggal pendaftaran: "
+                android:text="@string/tanggal_pendaftaran"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -72,27 +72,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="52dp"
                 android:padding="5dp"
-                android:text="2024/04/15"
+                android:text="@string/dummy_tgl_pendaftaran"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/expiryDate" />
-
-            <!--            <Button-->
-            <!--                android:id="@+id/registrationStatus"-->
-            <!--                android:layout_marginEnd="24dp"-->
-            <!--                android:layout_width="147dp"-->
-            <!--                android:layout_height="40dp"-->
-            <!--                android:backgroundTint="@color/dark_yellow"-->
-            <!--                android:text="DIPROSES"-->
-            <!--                android:textStyle="normal"-->
-            <!--                android:textSize="16sp"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/expiryDate"/>-->
 
             <ImageView
                 android:id="@+id/registrationStatus_level"
@@ -110,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill_horizontal"
-                android:text="DALAM PROSES"
+                android:text="@string/dummy_status_bansos"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="@+id/registrationStatus_level"

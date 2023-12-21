@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo_bansosplus"
+        android:src="@drawable/logo_bansosplus_hd"
         app:layout_constraintBottom_toTopOf="@+id/btn_masuk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

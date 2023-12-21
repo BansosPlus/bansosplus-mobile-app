@@ -28,14 +28,50 @@
     <string name="register_success">Berhasil Registrasi Akun</string>
     <string name="register_failed_response">Registrasi Akun Gagal</string>
     <string name="register_failed_pass_not_match">Password tidak sesuai</string>
-
-<!--    <string-array name="income_array">-->
-<!--        <item> </item>-->
-<!--        <item>&lt;500 ribu</item>-->
-<!--        <item>500 ribu-1 juta</item>-->
-<!--        <item>1 juta-1.5 juta</item>-->
-<!--        <item>&gt;1.5 juta</item>-->
-<!--    </string-array>-->
+    <string name="jenis_bantuan">Jenis Bantuan :</string>
+    <string name="ulasan_penerima_bantuan">Ulasan Penerima Bantuan</string>
+    <string name="deskripsi_bantuan">Deskripsi Bantuan</string>
+    <string name="kebutuhan_pokok">Kebutuhan Pokok</string>
+    <string name="batas_pendaftaran">Batas Pendaftaran:</string>
+    <string name="paket_sembako_covid_19">Paket Sembako Covid-19</string>
+    <string name="diambil_pada">Diambil pada :</string>
+    <string name="diterima_pada">Diterima pada :</string>
+    <string name="kode_qr">Kode QR</string>
+    <string name="isi_data_pribadi_anda">Isi Data Pribadi Anda</string>
+    <string name="data_pribadi_desc">Data pribadi Anda digunakan untuk verifikasi bantuan yang diajukan</string>
+    <string name="nik">NIK</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="no_kk">Nomor Kartu Keluarga</string>
+    <string name="penghasilan">Penghasilan per Tahun</string>
+    <string name="luas_lantai">Luas Lantai</string>
+    <string name="kualitas_dinding">Kualitas Dinding</string>
+    <string name="jumlah_makan">Jumlah Makan dalam Sehari</string>
+    <string name="bahan_bakar">Bahan Bakar di Rumah</string>
+    <string name="pendidikan">Pendidikan Terakhir</string>
+    <string name="aset">Jumlah Aset</string>
+    <string name="kemampuan_berobat">Kemampuan Berobat</string>
+    <string name="tanggungan">Jumlah Tanggungan</string>
+    <string name="ajukan_bantuan">Ajukan Bantuan</string>
+    <string name="pendaftaran_akun_bansosplus">Pendaftaran Akun BansosPlus</string>
+    <string name="pendaftaran_desc">Bersiap bergabung di BansosPlus</string>
+    <string name="nama">Nama</string>
+    <string name="email">Email</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="ulangi_kata_sandi">Ulangi Kata Sandi</string>
+    <string name="to_login">Sudah memiliki akun?</string>
+    <string name="data_policy1">Dengan mendaftar Anda setuju dengan,</string>
+    <string name="data_policy2">Ketentuan dan Kebijakan Privasi</string>
+    <string name="cek_status_pengajuan_bantuan">Cek status pengajuan bantuan</string>
+    <string name="histori_pengajuan">Histori Pengajuan Bantuan</string>
+    <string name="halo">Halo,</string>
+    <string name="user">Pak RT !</string>
+    <string name="list_bansos">List Bansos</string>
+    <string name="validasi_bantuan">Validasi Bantuan</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="bantuan_makanan_pokok">Bantuan Makanan Pokok</string>
+    <string name="tanggal_pendaftaran">Tanggal pendaftaran:</string>
+    <string name="dummy_tgl_pendaftaran">2024/04/15</string>
+    <string name="dummy_status_bansos">DALAM PROSES</string>
 
 
 </resources>
