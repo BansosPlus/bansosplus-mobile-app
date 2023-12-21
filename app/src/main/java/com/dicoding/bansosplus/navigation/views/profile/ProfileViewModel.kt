@@ -35,8 +35,12 @@ class ProfileViewModel(private val sessionManager: SessionManager): ViewModel() 
             }
         }
     }
-//    fun getUserData(): LiveData<UserItem> =
-//        userRepository.getSession().asLiveData()
+
+    fun logout() {
+        viewModelScope.launch {
+            sessionManager.logout()
+        }
+    }
 
 
 }

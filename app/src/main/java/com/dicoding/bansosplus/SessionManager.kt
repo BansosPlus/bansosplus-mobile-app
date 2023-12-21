@@ -44,4 +44,8 @@ class SessionManager (context: Context) {
     fun fetchNoKK(): String? {
         return prefs.getString(NOKK, null)
     }
+
+    fun logout(){
+        prefs.edit().remove(NAME).remove(TOKEN).remove(NIK).remove(NOKK).remove(ROLE).apply()
+    }
 }

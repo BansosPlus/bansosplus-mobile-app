@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -24,6 +25,7 @@ import com.dicoding.bansosplus.navigation.BottomNavActivity
 import com.dicoding.bansosplus.navigation.views.scanQr.ScanQrActivity
 import com.dicoding.bansosplus.repository.UserRepository
 import com.dicoding.bansosplus.ui.login.LoginActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -51,7 +53,17 @@ class ProfileFragment : Fragment() {
 
         binding.imageButton.setOnClickListener {
             val intent = Intent(requireContext(), WelcomeActivity::class.java)
-            startActivity(intent)
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Apakah anda yakin ingin keluar?")
+                .setPositiveButton("Batal"){
+                        dialog, _ -> dialog.dismiss()
+                }
+                .setNegativeButton("Keluar"){
+                        dialog, _ -> dialog.dismiss()
+                    viewModel.logout()
+                    startActivity(intent)
+                }.create().show()
+
         }
 
         if (sessionManager.fetchRole() != "admin") {
@@ -183,6 +195,9 @@ class ProfileFragment : Fragment() {
                         berobatSpinner.selectedItem.toString(),
                         tanggunganSpinner.selectedItem.toString()
                     )
+                    Toast.makeText(requireContext(),
+                        "Profile Updated",
+                        Toast.LENGTH_SHORT)
                 }
             }
         }
@@ -244,12 +259,33 @@ class ProfileFragment : Fragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             val selectedImageUri: Uri? = result.data?.data
             if (selectedImageUri != null) {
-                lifecycleScope.launch() {
-                    uploadImage(selectedImageUri)
+                lifecycleScope.launch {
+                    try {
+                        val filePath = getPathFromUri(selectedImageUri)
+                        val file = File(filePath)
+
+                        if (file.exists()) {
+                            val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
+                            val multipartBody = MultipartBody.Part.createFormData("file", file.name, requestFile)
+
+                            val response = UserRepository(sessionManager).updateImage(multipartBody)
+                            if (response.isSuccessful) {
+                                Log.i("BANSOS", "Update user image successfully")
+                                viewModel.getUserData() // Refresh user data after updating image
+                            } else {
+                                Log.e("BANSOS", "Image update failed: ${response.code()} - ${response.message()}")
+                            }
+                        } else {
+                            Log.e("BANSOS", "File not found at path: $filePath")
+                        }
+                    } catch (e: Exception) {
+                        Log.e("BANSOS", "Error during file upload", e)
+                    }
                 }
             }
         }
     }
+
 
     private suspend fun uploadImage(uri: Uri) {
         try {

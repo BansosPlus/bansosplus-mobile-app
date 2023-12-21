@@ -19,4 +19,6 @@ class UserRepository(private val sessionManager: SessionManager) {
     suspend fun update(request: UserRequest): Response<UserResponse> {
         return RetrofitInstance.userApi.update("Bearer " + sessionManager.fetchToken(), request)
     }
+
+
 }
